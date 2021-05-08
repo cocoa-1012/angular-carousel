@@ -1,0 +1,88 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+@import 'src/assets/styles/partials/_bg-elements';
+// @import '';
+
+.bg-esports {
+  $self: &;
+  display: grid;
+
+  &-hero {
+    display: grid;
+    min-height: 65vh;
+  }
+
+  &-talent, &-financials {
+    @include bg-feature-2fr;
+    align-items: center;
+
+    &-header {
+      display: grid;
+      align-content: start;
+
+      &__overline {
+        @include bg-copy__overline;
+      }
+
+      &__subheading {
+        @include bg-copy__subheading;
+      }
+    }
+
+
+    &-body {
+      @include bg-feature-body;
+
+      &-media {
+        @include bg-grid;
+
+        // max-height: 800px;
+
+        &__video {
+          height: 100%;
+          max-height: 800px;
+          width: 100%;
+        }
+
+      }
+    }
+
+  }
+
+  &-tasks {
+    @include bg-feature-2fr;
+    align-items: center;
+
+    &-header {
+      display: grid;
+      align-content: start;
+
+      &__overline {
+        @include bg-copy__overline;
+      }
+
+      &__subheading {
+        @include bg-copy__subheading;
+      }
+    }
+
+
+    &-body {
+      @include bg-feature-body;
+
+      &-media {
+        @include bg-grid;
+        // max-height: 800px;
+
+        &__video {
+          height: 100%;
+          // max-height: 800px;
+          width: 100%;
+        }
+
+      }
+    }
+
+  }
+
+}

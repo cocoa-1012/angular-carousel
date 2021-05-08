@@ -1,0 +1,422 @@
+@import '~@angular/material/theming';
+@import 'bg-variables';
+@import 'bg-colors';
+
+
+/* MIXINS ----------------------------------------------------------
+  You can add and import all mixins to be used by other styles here
+  All mixin must start with the `bg-` prefix to avoid conflicts
+  with any library's variables and to make them easier to identify.
+  To allow easy replacement of 3rd party mixins, they should also be
+  wrapped in a bg prefixed mxins in this file
+*/
+
+@mixin bg-icon($size: 24px) {
+  height: $size;
+  width: $size;
+  font-size: $size;
+  line-height: $size;
+  font-family: 'Material Icons';
+}
+
+@mixin bg-icon-hover($size: 24px, $color: $bg-label, $hover-color: $bg-secondary, $cursor: pointer) {
+  height: $size;
+  width: $size;
+  font-size: $size;
+  line-height: $size;
+  font-family: 'Material Icons';
+  color: $color;
+
+  &:hover {
+    color: $hover-color;
+    cursor: $cursor;
+  }
+}
+
+@mixin bg-card-hover {
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(6);
+    cursor: pointer;
+  }
+}
+
+@mixin bg-item-hover($bg-item-hover-color: $bg-secondary, $bg-item-hover-backgroundcolor: $bg-sidenav-hover) {
+  cursor: pointer;
+  color: $bg-item-hover-color !important;
+  background-color: $bg-item-hover-backgroundcolor !important;
+}
+
+@mixin for-size($range) {
+  @if $range==xs {
+    @media #{map-get($bg-breakpoints, 'xs')} {
+      @content;
+    }
+  }
+
+  @else if $range==sm {
+    @media #{map-get($bg-breakpoints, 'sm')} {
+      @content;
+    }
+  }
+
+  @else if $range==md {
+    @media #{map-get($bg-breakpoints, 'md')} {
+      @content;
+    }
+  }
+
+  @else if $range==lg {
+    @media #{map-get($bg-breakpoints, 'lg')} {
+      @content;
+    }
+  }
+
+  @else if $range==xl {
+    @media #{map-get($bg-breakpoints, 'xl')} {
+      @content;
+    }
+  }
+
+  // greater than breakpoints
+  @else if $range==gt-xs {
+    @media #{map-get($bg-breakpoints, 'gt-xs')} {
+      @content;
+    }
+  }
+
+  @else if $range==gt-sm {
+    @media #{map-get($bg-breakpoints, 'gt-sm')} {
+      @content;
+    }
+  }
+
+  @else if $range==gt-md {
+    @media #{map-get($bg-breakpoints, 'gt-md')} {
+      @content;
+    }
+  }
+
+  @else if $range==gt-lg {
+    @media #{map-get($bg-breakpoints, 'gt-lg')} {
+      @content;
+    }
+
+    // less than breakpoints
+  }
+
+  @else if $range==lt-xs {
+    @media #{map-get($bg-breakpoints, 'lt-xs')} {
+      @content;
+    }
+  }
+
+  @else if $range==lt-sm {
+    @media #{map-get($bg-breakpoints, 'lt-sm')} {
+      @content;
+    }
+  }
+
+  @else if $range==lt-md {
+    @media #{map-get($bg-breakpoints, 'lt-md')} {
+      @content;
+    }
+  }
+
+  @else if $range==lt-lg {
+    @media #{map-get($bg-breakpoints, 'lt-lg')} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn 'Unsupported screen range';
+  }
+}
+
+// grid-template-rows: auto;
+// grid-gap: 1rem;
+
+// Global grid mixins
+@function templateRow($list) {
+  $resultString: '';
+
+  @for $i from 1 through length($list) {
+    @if $i % 2 !=0 {
+      $count: nth($list, $i);
+
+      @for $j from 1 through $count {
+        $resultString: $resultString + ' '+ nth($list, $i + 1);
+      }
+    }
+  }
+
+  @return $resultString;
+}
+
+// Fluid font resize - currently not being used. Implement in future
+// @mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
+//     $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+//     $dimension: if(unit($responsive) == 'vw', 'height', 'width');
+//     $min-breakpoint: $min / $responsive-unitless * 100;
+
+//     @media (max-#{$dimension}: #{$min-breakpoint}) {
+//         font-size: $min;
+//     }
+
+//     @if $max {
+//         $max-breakpoint: $max / $responsive-unitless * 100;
+
+//         @media (min-#{$dimension}: #{$max-breakpoint}) {
+//             font-size: $max;
+//         }
+//     }
+
+//     @if $fallback {
+//         font-size: $fallback;
+//     }
+
+//     font-size: $responsive !important;
+// }
+
+
+@mixin elevation ($dp, $cursor: pointer) {
+  @if $dp==0 {
+    box-shadow: none
+  }
+
+  @else if $dp==1 {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  // Standard card elevation
+  @else if $dp==2 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==3 {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12), 0 1px 8px 0 rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==4 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20);
+    transform: translate3d(0, 0, 0);
+    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    cursor: $cursor;
+  }
+
+  // Standard card hover over
+  @else if $dp==6 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .20);
+    transform: translate3d(0, 0, 0);
+    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: $cursor;
+  }
+
+  // Standard card active state
+  @else if $dp==8 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==9 {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, .14), 0 3px 16px 2px rgba(0, 0, 0, .12), 0 5px 6px -3px rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==12 {
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==16 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else if $dp==24 {
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .20);
+    cursor: $cursor;
+  }
+
+  @else {
+    @error "Invalid argument for $dp: {"+$dp+"}, look at the method definition for possible values";
+  }
+}
+
+// ########## SPACINGS ##############
+
+// $spacing-sizes: (
+//     0: 0rem,
+//     025: 0.25rem,
+//     050: 0.5rem,
+//     075: 0.75rem,
+//     1: 1rem,
+//     150: 1rem,
+// );
+
+// $spacing-default: 1rem;
+// $direction-default: ();
+
+// @mixin padding ($amount: $spacing-default, $direction: $direction-default) {
+//     if $dire
+// };
+
+@mixin v-align {
+  display: flex;
+  align-items: center;
+}
+
+@mixin hover ($hover-color: $bg-secondary, $hover-background-color: $bg-topnav-hover) {
+  &:hover {
+    cursor: pointer;
+    color: $hover-color;
+    background-color: $hover-background-color;
+  }
+}
+
+@mixin overline {
+  font-family: 'Roboto', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2 !important;
+  font-size: 0.875rem !important;
+}
+
+
+// Fonts
+
+@mixin justme ($color: $bg-secondary, $size: 42px) {
+  font-family: JustMe,
+    sans-serif;
+  color: $color;
+  font-size: $size;
+  line-height: $size;
+
+  @include for-size(xs) {
+    // font-size: 32px;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.31px;
+  }
+}
+
+// Font - Feature/subheading text
+@mixin bg-feature-text($type: feature-dark) {
+
+  @include for-size (gt-xs) {
+
+    @if $type==feature-dark {
+      font-size: $bg-feature-font-size;
+      line-height: $bg-feature-line-height;
+      color: $bg-label-dark
+    }
+
+    @else if $type==feature-white {
+      font-size: $bg-feature-font-size;
+      line-height: $bg-feature-line-height;
+      color: $bg-label-white
+    }
+
+    @else if $type==feature-label {
+      font-size: $bg-feature-font-size;
+      line-height: $bg-feature-line-height;
+      color: $bg-label
+    }
+
+    @else if $type==subheading-dark {
+      font-size: $bg-subheading-font-size;
+      line-height: $bg-subheading-line-height;
+      color: $bg-label-dark
+    }
+
+    @else if $type==subheading-white {
+      font-size: $bg-subheading-font-size;
+      line-height: $bg-subheading-line-height;
+      color: $bg-label-white
+    }
+
+    @else {
+      @error "Unknown type #{$type}.";
+    }
+  }
+
+  @include for-size (xs) {
+
+    @if $type==feature-dark {
+      font-size: $bg-feature-font-size-xs;
+      line-height: $bg-feature-line-height-xs;
+      color: $bg-label-dark
+    }
+
+    @else if $type==feature-white {
+      font-size: $bg-feature-font-size-xs;
+      line-height: $bg-feature-line-height-xs;
+      color: $bg-label-white
+    }
+
+    @else if $type==feature-label {
+      font-size: $bg-feature-font-size-xs;
+      line-height: $bg-feature-line-height-xs;
+      color: $bg-label
+    }
+
+    @else if $type==subheading-dark {
+      font-size: $bg-subheading-font-size-xs;
+      line-height: $bg-subheading-line-height-xs;
+      color: $bg-label-dark
+    }
+
+    @else if $type==subheading-white {
+      font-size: $bg-subheading-font-size-xs;
+      line-height: $bg-subheading-line-height-xs;
+      color: $bg-label-white
+    }
+
+    @else {
+      @error "Unknown type #{$type}.";
+    }
+  }
+
+  @include for-size (xl) {
+
+    @if $type==feature-dark {
+      font-size: $bg-feature-font-size-xl;
+      line-height: $bg-feature-line-height-xl;
+      color: $bg-label-dark
+    }
+
+    @else if $type==feature-white {
+      font-size: $bg-feature-font-size-xl;
+      line-height: $bg-feature-line-height-xl;
+      color: $bg-label-white
+    }
+
+    @else if $type==feature-label {
+      font-size: $bg-feature-font-size-xl;
+      line-height: $bg-feature-line-height-xl;
+      color: $bg-label
+    }
+
+    @else if $type==subheading-dark {
+      font-size: $bg-subheading-font-size-xl;
+      line-height: $bg-subheading-line-height-xl;
+      color: $bg-label-dark
+    }
+
+    @else if $type==subheading-white {
+      font-size: $bg-subheading-font-size-xl;
+      line-height: $bg-subheading-line-height-xl;
+      color: $bg-label-white
+    }
+
+    @else {
+      @error "Unknown type #{$type}.";
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '_bg-vars-and-mixins';
+
+
+.bg-media__image {
+    width: 100%;
+    max-width: 600px;
+}
+
+.bg-media__video-frame {
+  max-width: 600px;
+  max-height: 600px;
+
+  @include for-size (gt-md) {
+    width: 600px;
+    height: 600px;
+  }
+
+
+  @include for-size (lt-md) {
+    width: 96vw;
+    height: 96vw;
+    margin: auto;
+    justify-self: center;
+  }
+}
+
+
+// .bg-media

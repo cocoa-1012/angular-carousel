@@ -1,0 +1,97 @@
+<div class="bgws-signup ">
+
+  <div class="bgws-signup-wrapper">
+    <div class=" bgws-signup__title">
+      <h5 class="" *ngIf="showForm && !success">Sign up for Blueghost</h5>
+      <h3 *ngIf="success">
+        <mat-icon inline="true">check_circle</mat-icon> &nbsp; You are now on the guestlist!
+      </h3>
+    </div>
+    <div class="bgws-signup-form" *ngIf="showForm && !success">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form" >
+        <div class=" form-grid t-primary">
+          <!-- <form > -->
+          <div class="column-fields">
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" [formGroup]="form" [formControl]="firstName" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>Last name</mat-label>
+              <input matInput placeholder="Last name" [formGroup]="form" [formControl]="lastName" required>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" color="accent" class="email">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" [formGroup]="form" [formControl]="email" required>
+          </mat-form-field>
+
+          <section class="flex-c-l">
+            <label class="">How are you involved in the event industry?</label>
+            <mat-checkbox class="p8-top p16-left" value="eventProducer" [formGroup]="form"
+              [formControl]="roleEventProducer" (change)="changeShowEventTypes($event)">I make events happen
+            </mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="artist" [formGroup]="form" [formControl]="roleArtist">I perform
+              at events
+            </mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="agent" [formGroup]="form" [formControl]="roleAgent">I
+              represent performers
+            </mat-checkbox>
+
+            <mat-checkbox class="p8-top p16-left" value="other" [formGroup]="form" [formControl]="roleOther"
+              (change)="changeOther($event)">Other
+            </mat-checkbox>
+          </section>
+
+          <!-- Show only if other checked -->
+          <mat-form-field appearance="outline" color="accent" class="p16-top" *ngIf="showOther">
+            <mat-label>Please elaborate</mat-label>
+            <input matInput placeholder="Please elaborate" [formGroup]="form" [formControl]="roleOtherDescription">
+          </mat-form-field>
+
+          <!-- Show only if roleEventProducer = checked -->
+          <section class="flex-c-l p16-top" *ngIf="showEventTypes">
+            <label class="">What kind of events do you produce?</label>
+            <mat-checkbox class="p8-top p16-left" value="festivals" [formGroup]="form"
+              [formControl]="eventTypeFestivals">
+              Festivals
+            </mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="clubsNights" [formGroup]="form" [formControl]="eventTypeClubs">
+              Music events / parties</mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="esports" [formGroup]="form" [formControl]="eventTypeEsports">
+              E-sports
+            </mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="conferences" [formGroup]="form"
+              [formControl]="eventTypeConferences">
+              Conferences</mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="liveMarketing" [formGroup]="form"
+              [formControl]="eventTypeLiveMarketing">
+              Live marketing</mat-checkbox>
+            <mat-checkbox class="p8-top p16-left" value="other" [formGroup]="form" [formControl]="eventOther"
+              (change)="changeOtherEvent($event)">Other
+            </mat-checkbox>
+          </section>
+
+          <!-- Show only if other checked -->
+          <mat-form-field appearance="outline" color="accent" class="p16-top" *ngIf="showOtherEvent">
+            <mat-label>Please elaborate</mat-label>
+            <input matInput placeholder="Please elaborate" [formGroup]="form" [formControl]="eventOtherDescription">
+          </mat-form-field>
+
+          <div class="p16-top">
+            <a class="bg-btn-main" data-savvycal-embed data-email="" data-display-name=""
+              href="https://savvycal.com/oli-blueghost/chat" *ngIf="showEventTypes" (click)="prepareTimer()">Sign up</a>
+
+            <button class="bg-btn-main" *ngIf="!showEventTypes">Sign up</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

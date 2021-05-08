@@ -1,0 +1,200 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+.bgws-signup {
+  $self: &;
+  min-height: 100% !important;
+  display: grid;
+  place-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./../../assets/images/background/signup-background.png");
+  background-position: center;
+
+  @include for-size (gt-md) {
+    background-image: url("./../../assets/images/background/signup-background@2x.png");
+  }
+
+
+  @include for-size (xs) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+
+  #{ $self }-wrapper {
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    margin: 1rem 0;
+
+    #{ $self }__title {
+      color: white;
+      line-height: 1.4;
+
+      h3 {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+
+    #{ $self }-form {
+      background-color: $bg-base;
+      padding: 1rem;
+      min-width: 18rem;
+      border-radius: 4px;
+
+      label {
+        line-height: 1.4;
+      }
+
+      &__grid {
+        display: grid;
+      }
+
+      a {
+        color: white;
+        padding: 0.7rem;
+      }
+
+
+    }
+
+  }
+
+  &-container {
+    justify-self: end;
+    display: flex;
+
+    @include for-size (xs) {
+      display: none;
+    }
+
+  }
+
+
+
+}
+
+.sign-up {
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    'dialog-title'
+    'dialog-content';
+  grid-auto-flow: row;
+  grid-template-rows: 64px 1fr;
+  grid-gap: 1rem;
+}
+
+.mat-dialog-actions {
+  z-index: 1;
+  // width: 28rem;
+
+
+  @include for-size (gt-xs) {
+    position: fixed;
+    bottom: 2vh;
+    width: 28rem;
+
+  }
+}
+
+.mat-dialog-content {
+  display: block;
+  height: 75vh !important;
+  max-height: unset !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  position: relative;
+  z-index: 2;
+}
+
+.dialog-title {
+  grid-area: dialog-title;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
+
+
+  @include for-size (xs) {
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-areas: 'd-close d-title';
+    padding-left: 1rem;
+  }
+
+  align-items: center;
+  grid-template-areas: 'd-close d-title .';
+
+  @include for-size (gt-xs) {
+    justify-items: center;
+  }
+
+
+  .d-close {
+    grid-area: d-close;
+  }
+
+  .d-title {
+    grid-area: d-title;
+    justify-items: center;
+  }
+}
+
+.dialog-content {
+  grid-area: dialog-content;
+  padding-top: 1rem;
+  // overflow: auto;
+
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  z-index: 10;
+
+  .btn-main {
+    min-width: 60%;
+  }
+
+
+
+}
+
+.form {
+  margin: 0;
+  padding: 0;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  min-width: 288px;
+  height: 100%;
+
+
+  .column-fields {
+    display: grid;
+    grid-auto-flow: column;
+
+    @include for-size (gt-xs) {
+
+      grid-gap: 1rem;
+    }
+
+    @include for-size (xs) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .flex-c-l {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start !important;
+  }
+
+}

@@ -1,0 +1,500 @@
+<div class="bg-home">
+  <section class="bg-home-hero">
+
+    <div class="bg-home-hero-wrapper">
+
+      <div class="bg-home-hero-header">
+
+        <h1>
+          The All-In-One Workspace
+          <br>
+          <!-- Live Events -->
+        </h1>
+
+        <span class="justme t-yellow">
+          <span id="typed"></span>
+        </span>
+
+
+        <p class="bg-home-hero-header__subheading">
+          <!-- Managing live events sucked, until now. Blueghost allows you to
+          streamline your live event operations and focus on the experience.  -->
+
+          Streamline your operations, save time and money and gain actionable event intelligence with Blueghost.
+
+          <!-- Gone
+          Gain critical insights into what’s happening with your event, in real time with Event Intelligence from Blueghost. -->
+          <!-- Blueghost helps event organizers streamline event operations to provide memorable experiences for everyone - without your team going mad. -->
+
+          <!-- Streamline your live events and focus on providing memorable experiences - without going mad. -->
+
+
+          <!-- Streamline your events operations create memorable experiencessaving time and money
+          <br>
+          Allow Artists
+          so you and your team can focus on crafting memorable experiences - without going mad. -->
+          <!-- Blueghost helps you streamline your live event operations, so you can focus on what you do best. -->
+        </p>
+
+        <form class="bg-home-hero-header-email-form">
+          <!-- <mat-form-field class="bg-home-hero-header-email-form__input"> -->
+          <div class="bg-home-hero-header-email-form__input-wrapper">
+            <input #email class="" placeholder="Your email address" (keyup.enter)="signup(email.value)">
+          </div>
+          <!-- </mat-form-field> -->
+          <div class="bg-home-hero-header-email-form__cta">
+            <a (click)="signup(email.value)" class="bg-btn-main">
+            <!-- <a href="signup" [routerLink]="'/signup'" class="bg-home-hero-header-email-form__cta-text"> -->
+              Sign up
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-home-hero-illustration">
+        <img alt="illustration" src="../../assets/images/home/bg-empty-event@2x.png">
+        <!-- <img alt="illustration" src="../../assets/images/test/bg-onboarding-streamline@2x.png"> -->
+      </div>
+
+
+    </div>
+
+    <!-- Testimonials -->
+    <!-- <div class="bg-home-hero-customer-slider">
+      <div class="bg-home-hero-customer-slider-wrapper">
+        <p>
+          Join hundreds of entertainment professionals
+        </p>
+
+        <div class="bg-home-hero-customer-slider-grid">
+          <div class="bg-home-hero-customer-slider-grid-logo">
+            <img alt="company" src="">
+          </div>
+          <div class="bg-home-hero-customer-slider-grid-logo">
+            <img alt="company" src="">
+          </div>
+          <div class="bg-home-hero-customer-slider-grid-logo">
+            <img alt="company" src="">
+          </div>
+          <div class="bg-home-hero-customer-slider-grid-logo">
+            <img alt="company" src="">
+          </div>
+        </div>
+
+      </div>
+    </div> -->
+
+    <!-- <div class="bg-home-hero-body">
+      <div class="bg-home-hero-body-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8HxuRUGKZv4" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div> -->
+
+    <img src="./../../assets/images/background/background-1-top.svg" alt="hero-background-1"
+      class="bg-home-hero-background-1-top">
+
+  </section>
+
+  <!-- *** FEATURES SECTION STARTS  -->
+  <section class="bg-home-features">
+    <div class="bg-home-features-wrapper">
+
+      <div class="bg-home-features-list">
+        <header class="bg-home-features-title">
+          <div class="bg-home-features-title__heading-overline">
+            Features
+            <div class="underline">
+
+            </div>
+          </div>
+          <h2 class="bg-home-features-title__heading">All in one place, not all over the place</h2>
+          <!-- <p class="bg-home-features-title__subheading">
+        Have a birds eye view of your entire operation with a granular view of event spends and metrics.
+        </p> -->
+        </header>
+
+        <!-- Item titles & image switches -->
+        <div class="bg-home-features-list-items">
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'talentBookings'"
+            (click)="features = 'talentBookings'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'talentBookings'">arrow_right</mat-icon>
+              <strong> Talent Bookings</strong> &nbsp;
+              <!-- <mat-icon inline="true" *ngIf="!featuresPlan">expand_more</mat-icon> -->
+            </p>
+          </div>
+
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'financials'"
+            (click)="features = 'financials'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'financials'">arrow_right</mat-icon>
+              <strong>Financials</strong>
+            </p>
+          </div>
+
+
+
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'tasks'"
+            (click)="features = 'tasks'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'tasks'">arrow_right</mat-icon>
+              <strong>Tasks & Collaboration</strong>
+            </p>
+          </div>
+
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'database'"
+            (click)="features = 'database'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'database'">arrow_right</mat-icon>
+              <strong>CRM & Database</strong>
+            </p>
+          </div>
+
+          <!-- <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'schedules'"
+            (click)="features = 'schedules'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'schedules'">arrow_right</mat-icon>
+              <strong>Schedules</strong>
+            </p>
+          </div> -->
+
+          <!-- <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'advancing'" (click)="features = 'advancing'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'advancing'">arrow_right</mat-icon>
+              <strong>Effortless Advancing</strong>
+            </p>
+          </div>
+
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'documents'" (click)="features = 'documents'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'documents'">arrow_right</mat-icon>
+              <strong>Document Manager</strong>
+            </p>
+          </div>
+
+          <div class="bg-home-features-item" [class.bg-home-features-item-active]="features == 'forms'" (click)="features = 'forms'">
+            <p class="bg-home-features-item__title">
+              <mat-icon inline="true" *ngIf="features == 'forms'">arrow_right</mat-icon>
+              <strong>Forms & Workflows</strong>
+            </p>
+          </div> -->
+        </div>
+
+        <div class="bg-home-features-list__cta">
+          <button class="bg-home-features-list__cta-button bg-btn-primary" [routerLink]="'/features'" href="/features">
+            Tour features
+          </button>
+        </div>
+
+      </div>
+
+      <div class="bg-home-features-mswitch">
+        <ul class="bg-home-features-mswitch-items">
+
+          <!-- Talentbookings -->
+          <li class="bg-home-features-mswitch__item"
+            [class.bg-home-features-mswitch__item-active]="features == 'talentBookings'"
+            (click)="features = 'talentBookings'">
+            <button class="bg-home-features-mswitch__item-button"></button>
+          </li>
+
+          <!-- Financials -->
+          <li class="bg-home-features-mswitch__item"
+            [class.bg-home-features-mswitch__item-active]="features == 'financials'" (click)="features = 'financials'">
+            <button class="bg-home-features-mswitch__item-button"></button>
+          </li>
+
+          <!-- Tasks -->
+          <li class="bg-home-features-mswitch__item" [class.bg-home-features-mswitch__item-active]="features == 'tasks'"
+            (click)="features = 'tasks'">
+            <button class="bg-home-features-mswitch__item-button"></button>
+          </li>
+
+          <!-- Database -->
+          <li class="bg-home-features-mswitch__item" [class.bg-home-features-mswitch__item-active]="features == 'database'"
+            (click)="features = 'database'">
+            <button class="bg-home-features-mswitch__item-button"></button>
+          </li>
+
+          <!-- Schedule -->
+          <!-- <li class="bg-home-features-mswitch__item"
+            [class.bg-home-features-mswitch__item-active]="features == 'schedules'" (click)="features = 'schedules'">
+            <button class="bg-home-features-mswitch__item-button"></button>
+          </li> -->
+        </ul>
+
+        <div class="bg-home-features-selector-switch">
+          <button type="button" data-role="none" aria-label="Previous" role="button"
+            class="bg-home-features-selector-switch__button  bg-btn-main" (click)="westClick()">
+            <mat-icon>west</mat-icon>
+          </button>
+          <button type="button" data-role="none" aria-label="Next" role="button"
+            class="bg-home-features-selector-switch__button bg-btn-main" (click)="eastClick()">
+            <mat-icon>east</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-home-features__cta">
+        <button class="bg-home-features__cta-button bg-btn-primary" [routerLink]="'/features'" href="/features">
+          Tour features
+        </button>
+      </div>
+
+
+      <div class="bg-home-features-highlight" [ngSwitch]="features">
+        <!-- Talent bookings -->
+        <div class="" *ngSwitchDefault>
+          <div class="bg-home-features-highlight-media">
+            <!-- <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image"> -->
+
+            <iframe src="https://player.vimeo.com/video/512507157?background=1?loop=1?autoplay=1"
+              class="bg-media__video-frame" autopause="0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Talent Bookings</h3>
+            <p class="bg-home-features-highlight-description__text">
+              Collect and share everything your team and talent need to perform at their best.
+
+              <!-- From logistics and itinerary to riders and
+              contracts, keep everything your team and talent need to perform at their best. -->
+            </p>
+          </div>
+        </div>
+
+        <!-- Financials -->
+        <div class="" *ngSwitchCase="'financials'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/home/financials@2x.png" alt="Financials image"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Financials</h3>
+            <p class="bg-home-features-highlight-description__text">
+              Streamline your profits with integrated financial
+              management over your entire operation.
+            <!-- Unparalleled financial control over your entire operation from a single dashboard -->
+            </p>
+          </div>
+        </div>
+
+
+
+        <!-- tasks -->
+        <div class="" *ngSwitchCase="'tasks'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/home/task-list@2x.png" alt="task-list image"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Tasks</h3>
+            <p class="bg-home-features-highlight-description__text">
+              Effective teamwork and accountability starts with everyone knowing what they should be working on.
+            </p>
+          </div>
+        </div>
+
+        <!-- crm -->
+        <div class="" *ngSwitchCase="'database'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/home/database@2x.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">CRM & Database</h3>
+            <p class="bg-home-features-highlight-description__text">
+              Build lasting relationships with talent, attendees, influencers and sponsors.
+            </p>
+          </div>
+        </div>
+
+        <!-- advancing -->
+        <div class="" *ngSwitchCase="'advancing'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Advancing</h3>
+            <p class="bg-home-features-highlight-description__text">Everything neatly organized by talent, from
+              contracts to itnerary</p>
+          </div>
+        </div>
+
+        <!-- schedules -->
+        <!-- <div class="" *ngSwitchCase="'schedules'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Schedules</h3>
+            <p class="bg-home-features-highlight-description__text">Timetables, team </p>
+          </div>
+        </div> -->
+
+        <!-- documents -->
+        <div class="" *ngSwitchCase="'documents'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Documents</h3>
+            <p class="bg-home-features-highlight-description__text">Everything neatly organized by talent, from
+              contracts to itnerary</p>
+          </div>
+        </div>
+
+        <!-- forms -->
+        <div class="" *ngSwitchCase="'forms'">
+          <div class="bg-home-features-highlight-media">
+            <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+              class="bg-home-features-highlight-media__image">
+          </div>
+          <div class="bg-home-features-highlight-description">
+            <h3 class="bg-home-features-highlight-description__heading">Forms & Workflows</h3>
+            <p class="bg-home-features-highlight-description__text">Everything neatly organized by talent, from
+              contracts to itnerary</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- *** FEATURES SECTION ENDS  -->
+
+  <img src="./../../assets/images/background/background-1-bottom.svg" alt="features-background-1-bottom"
+    class="bg-home-background-1-bottom">
+
+
+<!-- Solutions -->
+  <section class="bg-home-solutions">
+    <div class="bg-home-solutions-wrapper">
+
+      <div class="bg-home-solutions-header">
+        <div class="bg-home-solutions-header__overline">
+          Problems
+          <div class="underline">
+
+          </div>
+        </div>
+        <h2 class="bg-home-solutions-header__heading">
+          Solved by Blueghost
+        </h2>
+        <!-- <p class="bg-home-solutions-header__subheading">A  </p> -->
+
+      </div>
+
+    </div>
+
+    <div class="bg-home-solutions-carousel" >
+  <!-- <bgws-problems-carousel></bgws-problems-carousel> -->
+
+      <div class="bg-home-solutions-carousel-list">
+        <div class="bg-home-solutions-carousel-track"  >
+          <div class="bg-home-solutions-carousel-track-item" (click)="carouselToggle(problems[borderLeftStep])" *ngIf="borderLeftStep && !mobileView">
+            <div class="bg-home-solutions-carousel-inner">
+              <h3 class="bg-home-solutions-carousel-item__title">
+                <span class="bg-home-solutions-carousel-item__title-number">{{problems[borderLeftStep].number}}</span>
+                <br>
+                {{problems[borderLeftStep].title}}
+              </h3>
+            </div>
+          </div>
+          <div class="bg-home-solutions-carousel-track-item" (click)="carouselToggle(problems[leftStep])" *ngIf="leftStep && !mobileView">
+            <div class="bg-home-solutions-carousel-inner">
+              <h3 class="bg-home-solutions-carousel-item__title">
+                <span class="bg-home-solutions-carousel-item__title-number">{{problems[leftStep].number}}</span>
+                <br>
+                {{problems[leftStep].title}}
+              </h3>
+            </div>
+          </div>
+          <div class="bg-home-solutions-carousel-track-item-active "  (click)="carouselToggle(problems[actualStep])">
+            <div class="bg-home-solutions-carousel-inner-active " >
+            <!-- <div class="bg-home-solutions-carousel-inner-active " [ngStyle]="{'border-bottom':'4px solid problems[actualStep].color'"> -->
+              <h3 class="bg-home-solutions-carousel-item-active__title">
+                <span class="bg-home-solutions-carousel-item-active__title-number" >{{problems[actualStep].number}}</span>
+                <br>
+                {{problems[actualStep].title}}
+              </h3>
+              <p class="bg-home-solutions-carousel-item-active__solution">
+                {{problems[actualStep].solution}}
+              </p>
+            </div>
+          </div>
+          <div class="bg-home-solutions-carousel-track-item" (click)="carouselToggle(problems[rightStep])" *ngIf="rightStep && !mobileView">
+            <div class="bg-home-solutions-carousel-inner">
+              <h3 class="bg-home-solutions-carousel-item__title">
+                <span class="bg-home-solutions-carousel-item__title-number">{{problems[rightStep].number}}</span>
+                <br>
+                {{problems[rightStep].title}}
+              </h3>
+            </div>
+          </div>
+          <div class="bg-home-solutions-carousel-track-item" (click)="carouselToggle(problems[borderRightStep])" *ngIf="borderRightStep && !mobileView">
+            <div class="bg-home-solutions-carousel-inner">
+              <h3 class="bg-home-solutions-carousel-item__title">
+                <span class="bg-home-solutions-carousel-item__title-number">{{problems[borderRightStep].number}}</span>
+                <br>
+                {{problems[borderRightStep].title}}
+              </h3>
+            </div>
+          </div>
+        </div>
+    <!-- carousel ending -->
+      </div>
+    </div> <!-- carousel ending -->
+
+    <div class="bg-home-solutions-selector-switch">
+      <button type="button" data-role="none" aria-label="Previous" role="button"
+              class="bg-home-solutions-selector-switch__button  bg-btn-yellow" (click)="prev()">
+        <mat-icon>west</mat-icon>
+      </button>
+      <button type="button" data-role="none" aria-label="Next" role="button"
+              class="bg-home-solutions-selector-switch__button bg-btn-yellow" (click)="next()">
+        <mat-icon>east</mat-icon>
+      </button>
+    </div>
+  </section>
+
+
+<!-- Customer Spotlight -->
+  <section class="bg-home-customer-spotlight">
+
+    <div class="bg-home-customer-spotlight-wrapper">
+
+      <div class="bg-home-customer-spotlight-left">
+        <div class="bg-home-customer-spotlight-content">
+          <p class="bg-home-customer-spotlight-content__quote">
+            "It's easy to get stuck on event operations and loose perspective of the big picture. Blueghost helps us in identifying key opportunities for saving costs and better leveraging our resources."
+          </p>
+
+          <span class="bg-home-customer-spotlight-content__credentials">
+            Madu, event director @ Tantsa | Entourage
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-home-customer-spotlight-right">
+        <picture class="bg-home-customer-spotlight-media">
+          <img src="../../assets/images/home/madu1x.jpg" alt="Madu picture" class="bg-home-customer-spotlight__image">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+<!-- Sign up footer -->
+  <div class="bg-signup-footer">
+    <bgws-sign-up-footer></bgws-sign-up-footer>
+  </div>
+
+</div>

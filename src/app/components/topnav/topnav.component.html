@@ -1,0 +1,80 @@
+<header class="bg-header">
+  <div class="bg-header__wrap" [class.change-background]="menuOpened">
+    <nav class="bg-header__container">
+
+      <!-- logo -->
+      <a class="bg-header__logo" href="/" [routerLink]="'/'">
+        <img src="./../../../assets/images/logos/bg-topnav-logo-gradient.svg" alt="index" class="bg-header__logo-img">
+      </a>
+      <div class="bg-header__hamburger" (click)="toggleMobileMenu()">
+        <input class="menu-btn toggler" type="checkbox" id="menu-btn" (change)="checkValue($event)" />
+        <label class="menu-icon" for="menu-btn"><span class="menu-icon__navicon"></span></label>
+      </div>
+
+      <!-- nav menus -->
+      <!-- <div > -->
+      <div *ngIf="menuOpened" class="bg-header__menu" [@contentHeightAnimation]="menuOpened">
+        <div class="bg-header__menu-items">
+          <div class="">
+            <a class="bg-header__menu-item" href="/" [routerLink]="'/'" (click)="closeMobileMenu()">
+              Home
+            </a>
+          </div>
+
+          <div class="">
+            <a class="bg-header__menu-item" href="/features" [routerLink]="'/features'" (click)="closeMobileMenu()">
+              Features
+            </a>
+          </div>
+
+          <!-- Use case -->
+          <!-- todo: change active class name to a generic with an id instead of one for each menu toggle to be open -->
+
+          <!-- <div class="bg-header__popup-wrap" (click)="useCaseToggle($event)"
+            [class.bg-header__popup-wrap-active]="useCaseOpen">
+            <a aria-haspopup="true" class="bg-header__menu-item">By Use
+              Case
+              <span class="bg-header__menu-item-icon">↓</span></a>
+            <div class="bg-header__popup">
+              <a href="/e-sports" [routerLink]="'/e-sports'" class="bg-header__menu-item">E-Sports</a>
+              <a href="/entertainment" [routerLink]="'/entertainment'" class="bg-header__menu-item">Music</a>
+            </div>
+          </div> -->
+
+
+
+
+
+
+          <!-- <div class="">
+            <a class="bg-header__menu-item" href="pricing" [routerLink]="'/pricing'" (click)="closeMobileMenu()">
+              Pricing
+            </a>
+          </div> -->
+
+<!--
+          <div class="">
+            <a class="bg-header__menu-item" href="blog" [routerLink]="'/blog'">
+              Blog
+            </a>
+          </div> -->
+
+        </div>
+
+        <!-- Auth -->
+        <div class="bg-header__auth">
+          <div class="">
+            <a class="bg-header__menu-item" (click)="closeMobileMenu()" href="https://beta.blueghost.co">
+              Log in
+            </a>
+          </div>
+
+          <a class="bg-header__auth-signup bg-btn-main" href="/signup" [routerLink]="'/signup'" (click)="closeMobileMenu()">
+            Sign up &nbsp; <mat-icon>east</mat-icon>
+          </a>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+</header>

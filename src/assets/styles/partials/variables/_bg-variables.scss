@@ -1,0 +1,98 @@
+$section-width: 93.33333333vw;
+$section-margin: 0 auto;
+$max-width: 1800px;
+
+$bg-topnav-height: 83px;
+$bg-footer-height: 96px;
+
+/*
+  You can add all variables to be used by other styles here
+  All variables must start with the `$bg-` prefix to avoid conflicts
+  with any library's variables and to make them easier to identify
+*/
+
+/// HTML default font size
+///
+/// Considering that the default font size of the majority of the browsers is
+/// 16px, set HTML‘s font size to 62.5% (which will change it to 10px) so rem
+/// units can work in proportion to pixels (i.e.: 18px = 1.8rem, 23px = 2.3rem).
+///
+/// Percentage is being used to respect user‘s browser definition, so if the
+/// user defines the browser‘s default to 20px (which is 25% bigger than the
+/// browsers default), 62.5% will be 12.5px and 20rem will output 25px (25%
+/// bigger as defined by the user).
+$bg-html-font-size: 62.5%;
+
+/// Breakpoints for media queries
+///
+/// These are the main suggested breakpoints, but custom values can be used
+/// as necessary when needed
+// $bg-breakpoints: (
+//     small: 600px,
+//     medium: 900px,
+//     large: 1200px,
+//     x-large: 1800px,
+// );
+
+$bg-grid-columns: 12;
+
+// Media step breakpoint mixin based on Angular Material lib
+$bg-breakpoints: (
+    xs: 'screen and (max-width: 599px)',
+    sm: 'screen and (min-width: 600px) and (max-width: 959px)',
+    md: 'screen and (min-width: 960px) and (max-width: 1279px)',
+    lg: 'screen and (min-width: 1280px) and (max-width: 1919px)',
+    xl: 'screen and (min-width: 1920px) and (max-width: 5000px)',
+    lt-sm: 'screen and (max-width: 599px)',
+    lt-md: 'screen and (max-width: 959px)',
+    lt-lg: 'screen and (max-width: 1279px)',
+    lt-xl: 'screen and (max-width: 1919px)',
+    gt-xs: 'screen and (min-width: 600px)',
+    gt-sm: 'screen and (min-width: 960px)',
+    gt-md: 'screen and (min-width: 1280px)',
+    gt-lg: 'screen and (min-width: 1920px)',
+) !default;
+
+// Re-map the breakpoints for the helper classes
+$helper-breakpoints: (
+    xs: null,
+    sm: 'gt-xs',
+    md: 'gt-sm',
+    lg: 'gt-md',
+    xl: 'gt-lg',
+    mobile: 'lt-md',
+);
+
+@mixin media-breakpoint($breakpointName) {
+    $mediaQuery: map-get($bg-breakpoints, $breakpointName);
+
+    @if ($mediaQuery==null) {
+        @content;
+    } @else {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+
+// Font sizes for feature text mixin
+$bg-feature-font-size: 1.16666667vw;
+$bg-feature-font-size-xs: 4.93150685vw;
+$bg-feature-font-size-xl: 24px;
+
+$bg-feature-line-height: 1.66666667vw;
+$bg-feature-line-height-xs: 6.57534247vw;
+$bg-feature-line-height-xl: 36px;
+
+$bg-subheading-font-size: 2vw;
+$bg-subheading-font-size-xs: 4vw;
+// test, unused for now
+$bg-subheading-font-size-xl: 1vw;
+
+// xl tbd
+
+$bg-subheading-line-height: 2.667vw;
+$bg-subheading-line-height-xs: 2.667vw;
+$bg-subheading-line-height-xl: 1.666vw;
+

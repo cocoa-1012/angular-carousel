@@ -1,0 +1,201 @@
+<div class="bg-music">
+  <!-- content starts -->
+
+  <section class="bg-music-hero">
+    <bgws-hero [header]="'The definitive tool for music festivals, events and venues'" [subheader]="'Something here'"
+      [showTyped]="true" [media]="'../../assets/images/illustrations/bg-onboarding-coordinate.svg'">
+    </bgws-hero>
+  </section>
+
+  <!-- Talent bookings 2 -->
+  <!-- <section class="bg-music-talent">
+    <header class="bg-music-talent-header">
+      <div class="bg-music-talent-header__overline">
+        Epic team hosting
+        <div class="underline">
+
+        </div>
+      </div>
+      <h2 class="bg-music-talent-header__heading">Team and bookings management</h2>
+
+      <div class="bg-music-talent-header__subheading">
+        <p class="">
+          Make sure player teams have everything they need to perform at their best. And that goes for speakers, artists
+          and influencers too.
+        </p>
+        <br>
+        <p>
+          Colalborate seamlessly by collecting and sharing everything you need, from flights and itienraries to meet &
+          greets.
+        </p>
+      </div>
+    </header>
+
+  </section> -->
+
+  <!-- Section 3 -->
+  <div class="bg-section-background">
+    <section class="bg-music-talent">
+      <div class="bg-music-talent-container">
+        <div class="bg-music-talent-wrapper">
+          <header class="bg-music-talent-title">
+            <!-- <div class="bg-music-talent-title__heading-overline">
+        Next level talent hosting
+        <div class="underline">
+        
+        </div>
+        </div> -->
+            <h2 class="bg-music-talent-title__heading">Next level artist hosting</h2>
+            <p class="bg-music-talent-title__subheading">
+                Allow your artists and team to communicate, on the cloud.
+            </p>
+          </header>
+
+          <div class="bg-music-talent-list">
+            <div class="bg-music-talent-item" [class.bg-music-talent-item-active]="talentPlan">
+              <p class="bg-music-talent-item__title" (click)="toggleTalentPlan()">
+                <strong>Plan</strong> &nbsp;
+                <!-- <mat-icon inline="true" *ngIf="talentPlan">expand_less</mat-icon>
+        <mat-icon inline="true" *ngIf="!talentPlan">expand_more</mat-icon> -->
+              </p>
+              <!-- <div class="bg-music-talent-item__description" *ngIf="talentPlan">
+        Structure your revenue and costs with different attendance scenarios.
+        </div> -->
+            </div>
+
+            <div class="bg-music-talent-item" (click)="toggleTalentOverview()"
+              [class.bg-music-talent-item-active]="talentOverview">
+              <p class="bg-music-talent-item__title">
+                <strong>Overview</strong>
+                <!-- &nbsp;
+        <mat-icon inline="true" *ngIf="talentOverview">expand_less</mat-icon>
+        <mat-icon inline="true" *ngIf="!talentOverview">expand_more</mat-icon> -->
+              </p>
+              <!-- <div class="bg-music-talent-item__description" *ngIf="talentOverview">
+        Track ticket sales, revenue and expenses - and make adjustments as needed.
+        </div> -->
+            </div>
+
+            <div class="bg-music-talent-item" (click)="toggleTalentAnalyise()"
+              [class.bg-music-talent-item-active]="talentAnalyise">
+              <p class="bg-music-talent-item__title">
+                <strong>Analyse</strong>
+                <!-- &nbsp;
+        <mat-icon inline="true" *ngIf="talentAnalyise">expand_less</mat-icon>
+        <mat-icon inline="true" *ngIf="!talentAnalyise">expand_more</mat-icon> -->
+              </p>
+              <!-- <div class="bg-music-talent-item__description" *ngIf="talentAnalyise">
+        Easily spot what went well and what could've been better for next events.
+        </div> -->
+            </div>
+            <!-- <br>
+        <p>
+        Overview
+        </p>
+        <br>
+        <p>
+        Settle & Learn
+        </p> -->
+          </div>
+        </div>
+
+        <div class="bg-music-talent-body">
+
+          <div class="bg-music-talent-body-media">
+            <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1" class="bg-music-talent-body-media__image"
+              *ngIf="talentPlan">
+            <img alt="illustration 3" src="../../assets/images/illustrations/bg-onboarding-financial-dashboard.svg"
+              class="bg-media__image" *ngIf="talentAnalyise">
+            <img src="" alt="Plan 2" class="bg-music-talent-body-media__image" *ngIf="talentOverview">
+            <img src="" alt="Plan 3" class="bg-music-talent-body-media__image" *ngIf="talentPlan">
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+
+
+  <!-- Tasks -->
+  <section class="bg-music-tasks">
+
+
+    <div class="bg-music-tasks-body">
+
+      <div class="bg-music-tasks-body-media">
+        <!-- <video src="https://www.loom.com/share/3c8cf672ebf748848294559db43c32a3" autoplay></video> -->
+        <!-- <div style="position: relative; padding-bottom: 216.86746987951807%; height: 0;"> -->
+
+        <img alt="illustration" src="../../assets/images/illustrations/bg-onboarding-coordinate.svg"
+          class="bg-media__image">
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <header class="bg-music-tasks-header">
+      <div class="bg-music-tasks-header__overline">
+        Accountability
+        <div class="underline">
+
+        </div>
+      </div>
+      <h2 class="bg-music-tasks-header__heading">Tasks </h2>
+
+      <div class="bg-music-tasks-header__subheading">
+        <p class="">
+          Coordinate what your teams have to do inside of Blueghost
+          <!-- Centralize all relevant information for you tasks bookings, whether they are players, bands, speakers or
+          performers. -->
+        </p>
+        <br>
+        <p>
+          Colalborate seamlessly by collecting and sharing everything you need, from flights and itienraries to meet &
+          greets.
+        </p>
+      </div>
+    </header>
+  </section>
+
+  <!-- financials bookings -->
+  <section class="bg-music-financials">
+    <header class="bg-music-financials-header">
+      <div class="bg-music-financials-header__overline">
+        Financial management
+        <div class="underline">
+
+        </div>
+      </div>
+      <h2 class="bg-music-financials-header__heading">Team and bookings management</h2>
+
+      <div class="bg-music-financials-header__subheading">
+        <p class="">
+          Make sure player teams have everything they need to perform at their best. And that goes for speakers, artists
+          and influencers too.
+          <!-- Centralize all relevant information for you financials bookings, whether they are players, bands, speakers or
+          performers. -->
+        </p>
+        <br>
+        <p>
+          Colalborate seamlessly by collecting and sharing everything you need, from flights and itienraries to meet &
+          greets.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-music-financials-body">
+
+      <div class="bg-music-financials-body-media">
+        <!-- <video src="https://www.loom.com/share/3c8cf672ebf748848294559db43c32a3" autoplay></video> -->
+        <!-- <div style="position: relative; padding-bottom: 216.86746987951807%; height: 0;"> -->
+        <iframe src="https://www.loom.com/embed/3c8cf672ebf748848294559db43c32a3?autoplay=1" frameborder="0"
+          webkitallowfullscreen mozallowfullscreen allowfullscreen class="bg-music-talent-body-media__video"
+          autoplay="1&loop=1&autopause=0" allow="autoplay"></iframe>
+        <!-- </div> -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- content ends -->
+</div>

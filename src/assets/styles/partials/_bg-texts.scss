@@ -1,0 +1,288 @@
+@import '_bg-vars-and-mixins';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Objektivmk2 bold',
+    sans-serif;
+  // margin: 0.67em;
+}
+
+body {
+  font-family: Inter-400,
+    sans-serif;
+
+  // test
+  font-size: 2vw;
+  line-height: 2.667vw;
+
+  // font-size: 18px;
+  // line-height: 1.5;
+  letter-spacing: 0.17px;
+  font-display: swap;
+
+  @include for-size(xs) {
+    font-size: 16px;
+    // line-height: 1.5;
+    letter-spacing: 0.16px;
+  }
+
+  @include for-size (gt-md) {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+.justme {
+  font-family: JustMe,
+    sans-serif;
+  font-size: 42px;
+  line-height: 42px;
+
+  @include for-size(xs) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.33px;
+  }
+}
+
+// @mixin justme ($size: 42px) {
+//   font-family: JustMe,
+//     sans-serif;
+//   font-size: $size;
+//   line-height: $size;
+
+//   @include for-size(xs) {
+//     font-size: 32px;
+//     line-height: 40px;
+//     letter-spacing: 0.33px;
+//   }
+// }
+
+// @mixin justme-yellow ($size: 42px) {
+//   color: $bg-yellow;
+//   font-family: JustMe,
+//     sans-serif;
+//   font-size: $size;
+//   line-height: $size;
+
+//   @include for-size(xs) {
+//     font-size: 32px;
+//     line-height: 40px;
+//     letter-spacing: 0.33px;
+//   }
+// }
+
+// Reference from Blueghost app - outdated values
+// Max values | min values
+// h1 3.5rem (56px) | 	2,67rem (42.72px) - Page title
+// h2 3.052rem (48.83px) | 	2,67rem (42.72px) - Customer story numbers
+// h3 2.441rem (39.06px) |   1.708rem (27.34px) - Feature titles
+// h4 1.953rem (31.25px) |   1.424rem (27.34px) -
+// h5 1.563rem (25.00px) |   1.367rem (21.88px) - Feature item titles
+// h6 1.25rem (20.00px)  |   1.093rem (17.50px) -
+// base 1rem (16.00px)   |   0,875rem (14.00px)
+
+@include for-size(xs) {
+
+  p {
+    font-size: 1rem;
+    line-height: 1.67;
+    letter-spacing: 0.12px;
+  }
+
+  h1 {
+    font-size: 9.958904vw;
+    letter-spacing: -.1369863vw;
+    line-height: 12.05479452vw;
+  }
+
+  h2 {
+    font-size: 8.76712329vw;
+    line-height: 10.4109589vw;
+    letter-spacing: -.1369863vw;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.424rem;
+  }
+
+  h5 {
+    font-size: 1.367rem;
+  }
+
+  h6 {
+    font-size: 1.093rem;
+  }
+}
+
+@include for-size(gt-xs) {
+
+  // p {
+  //   font-size: 1.125rem;
+  // }
+
+  h1 {
+    // font-size: 3.5rem;
+    // line-height: 4.5rem;
+    letter-spacing: 0.58px;
+    // font-size: 8.33vw;
+    // line-height: 9vw;
+    font-weight: 400;
+
+    font-size: 72px;
+    line-height: 1.2;
+    font-family: 'Objektivmk2 rg',
+      sans-serif;
+  }
+
+  h2 {
+    // font-size: 3rem;
+    // line-height: 3.5rem;
+    font-size: 4vw;
+    line-height: 4.66666667vw;
+  }
+
+
+
+  h3 {
+    // font-size: 3rem;
+    // line-height: 1.17;
+    font-size: 2.66666667vw;
+    line-height: 3.33333333vw;
+    letter-spacing: .04166667vw;
+    font-family: 'Objektivmk2 rg',
+      sans-serif;
+  }
+
+  h4 {
+    font-size: 1.953rem;
+    line-height: 1.33;
+  }
+
+  h5 {
+    font-size: 1.563rem;
+    line-height: 1.9rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+  }
+}
+
+
+
+
+
+// New
+
+// Feature text:
+// .feature-text {
+//   font-size: 1.16666667vw;
+//   line-height: 1.66666667vw;
+//   @include t-color ($bg-label-dark);
+
+//   &-white {
+//     @include t-color ($bg-label-white);
+//   }
+
+// }
+
+
+
+  // }
+
+
+  //
+
+  .xbold {
+    font-family: 'Objektivmk2 xbd',
+      sans-serif;
+    font-display: swap;
+  }
+
+
+  // Font faces
+
+  // Objektiv
+  @font-face {
+    font-family: 'Objektivmk2 xbd';
+    src: url('/assets/fonts/Objektiv-Mk2-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Objektivmk2 rg';
+    src: url('/assets/fonts/ObjektivMk2_Rg.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Objektivmk2 bold';
+    src: url('/assets/fonts/Objektiv-Mk2-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  // Inter ui
+  @font-face {
+    font-family: 'Inter-400';
+    src: url('/assets/fonts/Inter-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter-200';
+    src: url('/assets/fonts/Inter-Thin.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter-300';
+    src: url('/assets/fonts/Inter-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter-500';
+    src: url('/assets/fonts/Inter-Thin.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter-600';
+    src: url('/assets/fonts/Inter-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  // Just me
+  @font-face {
+    font-family: 'JustMe';
+    src: url('/assets/fonts/JustMeAgainDownHere.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }

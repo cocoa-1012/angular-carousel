@@ -1,0 +1,70 @@
+
+
+$bg-sidenav-hover: rgba(0, 0, 0, 0.04);
+
+@import '~@angular/material/theming';
+@import '_bg-vars-and-mixins';
+
+// Elevation 2 dp
+.elevation-2 {
+    &:hover {
+        cursor: pointer;
+        @include elevation (2);
+        @include mat-elevation-transition;
+    }
+}
+
+// Elevation 4 dp
+.elevation-4 {
+    &:hover {
+        cursor: pointer;
+        @include elevation (4);
+        @include mat-elevation-transition;
+    }
+}
+
+// Elevation 6 dp
+.elevation-6 {
+    &:hover {
+        cursor: pointer;
+        @include elevation (6);
+        @include mat-elevation-transition;
+    }
+}
+
+// // Elevation 8 dp
+.elevation-8 {
+    &:hover {
+        cursor: pointer;
+        @include elevation (8);
+        @include mat-elevation-transition;
+    }
+}
+
+.bg-hover:hover {
+    cursor: pointer;
+    color: $bg-secondary !important;
+    background-color: $bg-topnav-hover;
+}
+
+.bg-sidenav-hover:hover {
+    cursor: pointer;
+    color: $bg-secondary !important;
+    background-color: $bg-sidenav-hover;
+}
+
+// Attachments
+
+.attachment-item:hover {
+    background: $bg-topnav-hover;
+}
+
+#bg-toggle-icon-emphasis {
+    mat-icon {
+        &:hover {
+            color: $bg-white;
+            background-color: $bg-secondary;
+            border-radius: 100%;
+        }
+    }
+}

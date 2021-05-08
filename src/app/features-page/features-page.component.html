@@ -1,0 +1,492 @@
+  <div class="bg-features">
+
+    <!-- Section 1 - Hero -->
+    <div class="bg-features-hero__wrapper">
+      <section class="bg-features-hero">
+        <div class="bg-features-hero-copy">
+          <header class="bg-features-hero-copy__header">
+            <h1>
+              Your event
+              <br>
+              command deck
+            </h1>
+          </header>
+          <div class="bg-features-hero-copy__subheading">
+            <p>A single source of truth for 360° control of your event, in real time, so you can deliver high quality
+              experiences - consistently. </p>
+          </div>
+          <div class="bg-features-hero-copy__cta">
+            <a href="signup" [routerLink]="'/signup'" class="">
+              <div class="bg-features-hero-copy__cta-text bg-btn-main">
+                Sign up &nbsp; <mat-icon class="bg-features-hero-copy__cta__text-icon">east</mat-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="bg-features-hero-body">
+          <img alt="illustration 3" src="../../assets/images/illustrations/financial-dashboard-no-background.svg"
+            class="bg-media__image">
+        </div>
+      </section>
+
+                <!-- <img alt="illustration 3" src="./../../assets/images/background/features-hero-background.svg"
+            class="bg-media__image"> -->
+    </div>
+
+
+    <!-- Section 2 - Talent -->
+    <section class="bg-features-talent">
+
+      <div class="bg-features-body">
+
+        <div class="bg-features-body-media">
+
+          <div class="" *ngIf="talentBookings">
+            <!-- booking video -->
+            <iframe src="https://player.vimeo.com/video/512507157?background=1?loop=1?autoplay=1"
+              class="bg-media__video-frame" autopause="0" frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture" allowfullscreen webkitallowfullscreen
+              mozallowfullscreen></iframe>
+          </div>
+
+          <!-- Talent terms img -->
+          <img src="../../assets/images/features-page/booking-terms@2x.png" alt="booking-terms-image"
+            class="bg-media__image" *ngIf="talentTerms">
+
+          <!-- Sharebooking img -->
+          <img src="../../assets/images/features-page/booking-share-booking@2x.png" alt="share-booking-image"
+            class="bg-media__image" *ngIf="talentShare">
+        </div>
+      </div>
+      <div class="bg-features-talent-wrapper">
+        <header class="bg-features-copy">
+          <div class="bg-features-copy__heading-overline">
+            Automate bookings
+
+            <div class="underline">
+
+            </div>
+          </div>
+          <h2 class="bg-features-copy__heading">Next level talent management</h2>
+          <div class="bg-features-copy__subheading">
+            <p class="">
+              Streamline your talent bookings, from concept to rockstar performance. Keep everyone in the loop with
+              gogle docs style collaboration.
+            </p>
+
+          </div>
+        </header>
+
+        <div class="bg-features-toggle-list">
+          <div class="bg-features-toggle-item" [class.bg-features-toggle-item-active]="talentBookings"
+            (click)="toggleTalentBookings()">
+            <p class="bg-features-toggle-item__title" [@contentHeightAnimation400]="talentBookings">
+              <span>Itinerary & Schedule</span> &nbsp;
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="!talentBookings">expand_more
+              </mat-icon>
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="talentBookings">expand_less
+              </mat-icon>
+            </p>
+            <div class="bg-features-toggle-item__description" *ngIf="talentBookings"
+              [@contentHeightAnimation400]="talentBookings">
+              Structure your revenue and costs with different attendance scenarios.
+            </div>
+          </div>
+
+          <div class="bg-features-toggle-item" (click)="toggleTalentTerms()"
+            [class.bg-features-toggle-item-active]="talentTerms" [@contentHeightAnimation400]="talentTerms">
+            <p class="bg-features-toggle-item__title">
+              <span>Terms & Documents</span>
+              &nbsp;
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="!talentTerms">
+                expand_more</mat-icon>
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="talentTerms">expand_less
+              </mat-icon>
+            </p>
+            <div class="bg-features-toggle-item__description" *ngIf="talentTerms"
+              [@contentHeightAnimation400]="talentTerms">
+              Keep riders, contracts and deal terms organized - so you can leave those days of looking for riders on
+              gmail (and not finding it).
+            </div>
+          </div>
+
+          <div class="bg-features-toggle-item" (click)="toggleTalentShare()"
+            [class.bg-features-toggle-item-active]="talentShare" [@contentHeightAnimation400]="talentShare">
+            <p class="bg-features-toggle-item__title">
+              <span>Share & Build it together</span>
+              &nbsp;
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="!talentShare">
+                expand_more</mat-icon>
+              <mat-icon inline="true" class="bg-features-toggle-item__title-icon" *ngIf="talentShare">expand_less
+              </mat-icon>
+            </p>
+            <div class="bg-features-toggle-item__description" *ngIf="talentShare"
+              [@contentHeightAnimation400]="talentShare">
+              Send performers and agents a magic link, so you can collect everything you need while providing up to
+              date information.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Section 3 -->
+    <div class="bg-section-background">
+      <section class="bg-features-financials">
+
+        <div class="bg-features-copy-wrapper">
+          <header class="bg-features-copy">
+            <div class="bg-features-copy__heading-overline">
+              Streamline your profits
+              <div class="underline">
+              </div>
+            </div>
+            <h2 class="bg-features-copy__heading">
+              Unparallaled financial control</h2>
+            <div class="bg-features-copy__subheading">
+              <p> A birds eye view of your entire operation with a granular details of event revenue, expenses and
+                metrics that matter.</p>
+            </div>
+          </header>
+
+          <object data="../../assets/images/illustrations/bg-3stripes-sphere.svg" type="image/svg+xml"
+            class="bg-il-3stripes"></object>
+
+        </div>
+
+        <div class="bg-features-body">
+
+          <div class="bg-features-body-media">
+            <img src="../../assets/images/home/financials@2x.png" alt="booking-terms-image" class="bg-media__image">
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- Section 5 - Database -->
+    <section class="bg-features-database">
+
+      <div class="bg-features-body bg-database-body">
+        <div class="bg-features-body-media">
+          <img alt="illustration" src="../../assets/images/home/database@2x.png" class="bg-media__image">
+        </div>
+      </div>
+
+      <div class="bg-features-copy-wrapper bg-database-copy">
+        <header class="bg-features-copy">
+          <div class="bg-features-copy__heading-overline">
+            Nurture relationships
+            <div class="underline">
+            </div>
+          </div>
+          <h2 class="bg-features-copy__heading">
+            One database to rule them all</h2>
+          <div class="bg-features-copy__subheading">
+            <p> Cultivate, manage and harvest better relationships with attendees, sponsors and event stakeholder with
+              an integrated CRM</p>
+          </div>
+        </header>
+      </div>
+
+    </section>
+
+
+    <!-- Section 6 - Tasks -->
+    <div class="bg-section-background-secondary">
+      <section class="bg-features-tasks">
+
+        <header class="bg-features-tasks-title">
+
+          <div class="">
+            <div class="bg-features-tasks-title__heading-overline">
+              Nurture relationships
+              <div class="underline">
+              </div>
+            </div>
+
+
+            <h2 class="bg-features-tasks-title__heading">
+              <span class="bg-features-tasks-title__heading-desktop">Effective <br> & fluid <br>collaboration</span>
+              <span class="bg-features-tasks-title__heading-mobile">Effective & fluid collaboration</span>
+            </h2>
+          </div>
+          <p class="bg-features-tasks-title__subheading">
+            Scale high-performance through effective teamwork and consistent communication.
+
+            <br>
+            <br>
+            Give your team the tools
+            they
+            need to creatively and efficiently solve problems as they happen.
+          </p>
+        </header>
+
+        <div class="bg-features-tasks-wrapper">
+          <div class="bg-features-tasks-media">
+            <div class="bg-features-tasks-media__item">
+
+              <object data="../../assets/images/illustrations/taskgroup-lists.svg" type="image/svg+xml"
+                class="bg-features-tasks-media__item-img"></object>
+            </div>
+            <div class="bg-features-tasks-media__item">
+              <object data="../../assets/images/illustrations/taskgroup-details.svg" type="image/svg+xml"
+                class="bg-features-tasks-media__item-img"></object>
+
+            </div>
+            <div class="bg-features-tasks-media__item">
+              <object data="../../assets/images/illustrations/taskgroup-dependencies.svg" type="image/svg+xml"
+                class="bg-features-tasks-media__item-img"></object>
+            </div>
+          </div>
+
+
+          <div class="bg-features-tasks-body">
+            <div class="bg-features-tasks-body-item">
+              <!-- mobile only image -->
+              <div class="bg-features-tasks-body-item__img">
+                <object data="../../assets/images/illustrations/taskgroup-lists.svg" type="image/svg+xml"
+                  class="bg-features-tasks-media__item-img "></object>
+              </div>
+              <h4 class="bg-features-tasks-body-item__heading">
+                Task lists
+              </h4>
+              <div class="bg-features-tasks-body-item__description">
+                Make it easy for everyone to see what they should be working on, with individual or team wide tasks.
+              </div>
+            </div>
+
+            <div class="bg-features-tasks-body-item">
+              <!-- mobile only image -->
+              <div class="bg-features-tasks-body-item__img">
+                <object data="../../assets/images/illustrations/taskgroup-details.svg" type="image/svg+xml"
+                  class="bg-features-tasks-media__item-img "></object>
+              </div>
+              <h4 class="bg-features-tasks-body-item__heading">
+                Tasks
+              </h4>
+              <div class="bg-features-tasks-body-item__description">
+                Forget looking for files and information on email and messages. Keep everything you need in one place.0
+              </div>
+            </div>
+
+            <div class="bg-features-tasks-body-item">
+              <!-- mobile only image -->
+              <div class="bg-features-tasks-body-item__img">
+                <object data="../../assets/images/illustrations/taskgroup-dependencies.svg" type="image/svg+xml"
+                  class="bg-features-tasks-media__item-img "></object>
+              </div>
+              <h4 class="bg-features-tasks-body-item__heading">
+                Task dependencies
+              </h4>
+              <div class="bg-features-tasks-body-item__description">
+                Link tasks and track their impact on your event flow.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
+
+    <!-- Unused for now -->
+
+    <!-- Section 7 -->
+    <section class="bg-features-workflows">
+
+      <div class="bg-features-workflows-wrapper">
+
+
+        <header class="bg-features-workflows-title">
+          <div class="bg-features-workflows-title__heading-overline">
+            Your needs
+            <div class="underline">
+
+            </div>
+          </div>
+
+          <h2 class="bg-features-workflows-title__heading">Customize it your
+            Way</h2>
+          <p class="bg-features-workflows-title__subheading">
+            Build your own custom flows and forms with our powerful form builder
+          </p>
+        </header>
+      </div>
+
+      <div class="bg-features-workflows-body">
+        <div class="bg-features-workflows-body-media">
+          <iframe src="https://www.loom.com/embed/3c8cf672ebf748848294559db43c32a3?autoplay=1" frameborder="0"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen class="bg-features-workflows-body-media__video"
+            autoplay="1&loop=1&autopause=0" allow="autoplay"></iframe>
+          <!-- </div> -->
+        </div>
+      </div>
+
+    </section>
+    <!-- </div> -->
+
+    <!-- Section 8 -->
+    <section class="bg-features-schedule">
+
+      <div class="bg-features-schedule-wrapper">
+
+
+        <header class="bg-features-schedule-title">
+          <div class="bg-features-schedule-title__heading-overline">
+            All in one schedule (coming soon)
+            <div class="underline">
+
+            </div>
+          </div>
+
+          <h2 class="bg-features-schedule-title__heading">Not a master excel. Way better</h2>
+          <p class="bg-features-schedule-title__subheading">
+            Everything that has a date and time to happen, can be accessed in your event master schedule.
+
+            <br>
+            <br>
+            Programm & timetable, staff member's schedules and filter by type of resurce.
+          </p>
+        </header>
+      </div>
+
+      <div class="bg-features-schedule-body">
+        <div class="bg-features-schedule-body-media">
+
+          <img alt="illustration" src="../../assets/images/illustrations/bg-talent-schedule@2x.png"
+            class="bg-media__image">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Documents -->
+    <section class="bg-features-documents">
+      <div class="bg-features-documents-wrapper">
+        <header class="bg-features-documents-title">
+          <div class="bg-features-documents-title__heading-overline">
+            Streamline your profits
+            <div class="underline">
+
+            </div>
+          </div>
+          <h2 class="bg-features-documents-title__heading">Documents</h2>
+          <p class="bg-features-documents-title__subheading">
+            Have a birds eye view of your entire operation with a granular view of event spends and metrics.
+          </p>
+        </header>
+
+        <div class="bg-features-documents-list">
+          <div class="bg-features-documents-item" [class.bg-features-documents-item-active]="documentsPlan">
+            <p class="bg-features-documents-item__title" (click)="toggleDocumentsPlan()">
+              <strong>Plan</strong> &nbsp;
+              <mat-icon inline="true" *ngIf="documentsPlan">expand_less</mat-icon>
+              <mat-icon inline="true" *ngIf="!documentsPlan">expand_more</mat-icon>
+            </p>
+            <div class="bg-features-documents-item__description" *ngIf="documentsPlan">
+              Design your event, calculate beps
+            </div>
+          </div>
+
+          <div class="bg-features-documents-item" (click)="toggleDocumentsOverview()"
+            [class.bg-features-documents-item-active]="documentsOverview">
+            <p class="bg-features-documents-item__title">
+              <strong>Overview</strong>
+              &nbsp;
+              <mat-icon inline="true" *ngIf="documentsOverview">expand_less</mat-icon>
+              <mat-icon inline="true" *ngIf="!documentsOverview">expand_more</mat-icon>
+            </p>
+            <div class="bg-features-documents-item__description" *ngIf="documentsOverview">
+              Track ticket sales, expenses and important event metrics
+            </div>
+          </div>
+
+          <div class="bg-features-documents-item" (click)="toggleDocumentsLearn()"
+            [class.bg-features-documents-item-active]="documentsLearn">
+            <p class="bg-features-documents-item__title">
+              <strong>Learn</strong>
+              &nbsp;
+              <mat-icon inline="true" *ngIf="documentsLearn">expand_less</mat-icon>
+              <mat-icon inline="true" *ngIf="!documentsLearn">expand_more</mat-icon>
+            </p>
+            <div class="bg-features-documents-item__description" *ngIf="documentsLearn">
+              Understand what still to be paid and what isn't
+            </div>
+          </div>
+          <!-- <br>
+        <p>
+        Overview
+        </p>
+        <br>
+        <p>
+        Settle & Learn
+        </p> -->
+        </div>
+      </div>
+
+      <div class="bg-features-documents-body">
+
+        <div class="bg-features-documents-body-media">
+          <img src="../../assets/images/bg-temp-finanacial.png" alt="Plan 1"
+            class="bg-features-documents-body-media__image" *ngIf="documentsPlan">
+          <img src="" alt="Plan 2" class="bg-features-documents-body-media__image" *ngIf="documentsOverview">
+          <img src="" alt="Plan 3" class="bg-features-documents-body-media__image" *ngIf="documentsLearn">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Sign up footer -->
+    <bgws-sign-up-footer></bgws-sign-up-footer>
+
+
+
+    <!-- Additional Features -->
+
+    <!-- <section class="bg-features-additional">
+      <header class="bg-features-additional-title">
+        <div class="bg-features-additional-title__heading-overline">
+          Still not enough?
+          <div class="underline">
+
+          </div>
+        </div>
+        <h2 class="bg-features-additional-title__heading">Additional features</h2>
+        <p class="bg-features-additional-title__subheading">
+        </p>
+      </header>
+
+      <div class="bg-features-additional-items">
+        <div class="bg-features-additional-item" *ngFor="let item of features">
+          <div class="bg-features-additional-item-wrapper">
+            <div class="bg-features-additional-item-image">
+              <div class="bg-features-additional-item-image__background">
+                <div class="bg-features-additional-item-image__icon">
+                  <mat-icon>{{item.icon}}</mat-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="bg-features-additional-item-content">
+              <header class="bg-features-additional-item-content__title">
+                <h3>
+                  {{item.title}}
+                </h3>
+              </header>
+              <p class="bg-features-additional-item-content__body">
+                {{item.copy}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+  </div>

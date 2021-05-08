@@ -1,0 +1,105 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+
+.bg-footer {
+  $self: &;
+  display: grid;
+  // background-color: $bg-il-yellow;
+  // background-color: lighten($color: $bg-il-yellow, $amount: 4);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--il-gold)), to(var(--bg-yellow2)));
+  background-image: linear-gradient(180deg,  var(--bg-il-gold), var(--yellow2));
+  @include t-color ($bg-primary);
+  padding: 1rem;
+  margin-top: -8px;
+  grid-gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas: 'bg-footer__logo bg-footer__nav bg-footer__blueghost';
+  align-items: center;
+
+  @include for-size (xs) {
+    grid-template-areas:
+      'bg-footer__nav bg-footer__nav'
+      ' bg-footer__blueghost bg-footer__logo';
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+
+  }
+
+  &__nav {
+    grid-area: bg-footer__nav;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    grid-gap: 2rem;
+    padding: 1rem 0.75rem;
+
+    @include for-size (xs) {
+      grid-gap: 0.5rem;
+
+      flex-direction: column;
+    }
+
+    &-item {
+      transition: color .25s;
+
+      a {
+        text-decoration: none !important;
+        @include t-color ($bg-primary);
+
+        &:visited, &:active {
+          color: inherit !important;
+        }
+
+        &:hover {
+          @include t-color ($bg-secondary);
+        }
+      }
+
+
+      @include for-size (xs) {
+        font-size: 5.534247vw;
+        line-height: 9.8630137vw;
+        white-space: nowrap;
+        position: relative;
+        max-height: max-content;
+      }
+
+      &:hover {
+        border-radius: 8px;
+        cursor: pointer;
+        @include t-color ($bg-secondary);
+      }
+    }
+
+  }
+
+  #{ $self}__blueghost {
+    grid-area: bg-footer__blueghost;
+    font-family: 'Objektivmk2 rg',
+      sans-serif;
+    align-self: center;
+    justify-self: start;
+
+    @include for-size (gt-xs) {
+
+      justify-self: end;
+    }
+  }
+
+  #{ $self}__logo {
+    display: flex;
+    grid-area: bg-footer__logo;
+    align-self: center;
+
+    justify-self: end;
+
+    &-icon:hover {
+        cursor: pointer;
+      }
+
+    @include for-size (gt-xs) {
+      justify-self: start;
+
+    }
+  }
+
+}

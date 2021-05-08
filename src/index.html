@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Segment script -->
+  <script defer>
+    ! function () {
+      var analytics = window.analytics = window.analytics || [];
+      if (!analytics.initialize)
+        if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+        else {
+          analytics.invoked = !0;
+          analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset",
+            "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware",
+            "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"
+          ];
+          analytics.factory = function (e) {
+            return function () {
+              var t = Array.prototype.slice.call(arguments);
+              t.unshift(e);
+              analytics.push(t);
+              return analytics
+            }
+          };
+          for (var e = 0; e < analytics.methods.length; e++) {
+            var t = analytics.methods[e];
+            analytics[t] = analytics.factory(t)
+          }
+          analytics.load = function (e, t) {
+            var n = document.createElement("script");
+            n.type = "text/javascript";
+            n.async = !0;
+            n.src = "https://cdn.segment.com/analytics.js/v1/" + e + "/analytics.min.js";
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(n, a);
+            analytics._loadOptions = t
+          };
+          analytics.SNIPPET_VERSION = "4.1.0";
+          analytics.load("Tomqt2wrzuPn1NXpKBGVZ0MenmAvppHC");
+          analytics.page();
+        }
+    }();
+  </script>
+
+
+
+  <!-- From bg-website -->
+		<title>Blueghost | Manage live events the smart way</title>
+
+		<meta property="og:title" content="Blueghost | the smart way to manage live events">
+
+		<meta name="description"
+		  content="The all-in-one workspace for event organizers, artists and agents to collaborate on live events.">
+
+		<meta property="og:url" content="https://blueghost.co">
+		<meta property="og:description"
+		  content="The all-in-one workspace for event organizers, artists and agents to collaborate on live events.">
+
+      <meta property="og:image" itemprop="image" content="https://blueghost.co/assets/images/social/bg-v-1200x630.png">
+      <meta property="og:image:type" content="image/png" />
+      <!-- <meta property="og:image:width" content="500" />
+      <meta property="og:image:height" content="500" /> -->
+
+
+      <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="Blueghost">
+
+    <meta name="twitter: card" content="sumarry">
+    <meta name="twitter: site" content="@blueghost_co">
+    <meta name="twitter: title" content="Blueghost | the smart way to manage live events">
+    <meta name="twitter: description"
+      content="The all-in-one workspace for event organizers, artists and agents to collaborate on live events.">
+    <meta name="twitter: card" content="sumarry">
+    <meta name="twitter: image" content="https://blueghost.co/assets/images/social/bg_og_horizontal_500x500_x1.png">
+
+
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-32x32.png" img-src="/assets/images/favicon/favicon-32x32.png"> -->
+
+  <!-- <link href="https://res.cloudinary.com/finnhvman/raw/upload/matter/matter-0.2.2.min.css" rel="stylesheet"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <bgws-root></bgws-root>
+
+
+  <!-- Savycal link -->
+<script >window.SavvyCal=window.SavvyCal||function(){(SavvyCal.q=SavvyCal.q||[]).push(arguments)};</script>
+<script defer src="https://embed.savvycal.com/v1/embed.js"></script>
+  <script>
+    SavvyCal('init');
+    // SavvyCal('open', { link: 'oli-blueghost/chat' });
+  </script>
+
+</body>
+</html>

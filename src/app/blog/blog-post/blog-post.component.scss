@@ -1,0 +1,155 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+$spacing: 3rem;
+
+.bg-blog-post {
+  padding: 0 1rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 10fr) minmax(0, 1fr);
+  grid-template-areas: '. bg-blog-post-article bg-blog-post-sidebar';
+
+  @include for-size (xs) {
+    padding: 0 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'bg-blog-post-sidebar'
+      'bg-blog-post-article';
+  }
+
+
+  &-article {
+    grid-area: bg-blog-post-article;
+
+
+    &-figure {
+        max-width: 1900px;
+        margin: 0 auto;
+
+      &__image {
+        width: 100%;
+
+      }
+    }
+
+    &-inner {
+      max-width: 850px;
+      margin: 0 auto;
+
+      &__header {
+        margin-top: var(--spacing);
+      }
+    }
+  }
+
+  &-sidebar {
+    grid-area: bg-blog-post-sidebar;
+  }
+
+}
+
+// text styles
+
+.blog-h1 {
+  font-size: 3.13rem;
+  line-height: 1.28;
+  margin: 0;
+  // color: orange;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: var(--spacing) 0 calc(var(--spacing) / 4);
+  line-height: 1.5em;
+}
+
+
+p {
+  margin: calc(var(--spacing) / 1.5) 0;
+  color: #454545;
+
+
+
+}
+
+section>p:first-of-type {
+  margin: 0 0 calc(var(--spacing) / 1.5);
+}
+
+.bg-first-paragraph {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  color: unset;
+}
+
+.bg-blockquote {
+  margin: var(--spacing);
+
+  &-1 {
+    p {
+      padding: 0;
+      font-size: 2em;
+      line-height: 1.5;
+      color: $bg-secondary;
+      text-align: center;
+    }
+  }
+
+  &-2 {
+    p {
+      padding: 0;
+      font-size: 2.88rem;
+      line-height: 1.3;
+      font-weight: 300;
+      font-style: italic;
+      color: $bg-secondary;
+      text-align: center;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  counter-reset: none;
+  list-style: none;
+  padding: 0 calc(var(--spacing) * 1.5);
+}
+
+ul>li {
+  margin: calc(var(--spacing) - 1em) 0;
+
+  ::before {
+    content: "\2022";
+    color: $bg-secondary;
+    position: absolute;
+    margin-left: calc(var(--spacing) / -1.5);
+  }
+}
+
+ol {
+
+  li {
+    margin: calc(var(--spacing) - 1em) 0;
+    counter-increment: item;
+  }
+
+  li:before {
+    content: counter(item);
+    color: $bg-secondary;
+    position: absolute;
+
+    margin-left: calc(var(--spacing) / -1.5);
+  }
+
+  li:after {
+    content: '.';
+  }
+}
+
+
+img {
+  width: 100%;
+}

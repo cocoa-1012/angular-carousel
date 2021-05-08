@@ -1,0 +1,20 @@
+@import '_bg-vars-and-mixins';
+
+.bg-icon {
+    @include bg-icon;
+}
+
+.i-label {
+    @include t-color ($bg-label);
+    @include bg-icon;
+}
+
+.i-disabled {
+    @include t-color ($bg-disabled);
+    @include bg-icon;
+}
+
+.i-secondary {
+    @include t-color ($bg-secondary);
+    @include bg-icon;
+}

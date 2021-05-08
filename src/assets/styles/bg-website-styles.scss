@@ -1,0 +1,19 @@
+// @import '~@angular/material/theming';
+@import 'partials/_bg-vars-and-mixins';
+
+@import 'partials/_bg-texts';
+// @import './partials/_bg-color-styles';
+@import 'partials/_theme-md';
+@import 'partials/_bg-buttons';
+
+@import 'partials/_bg-spacing';
+@import 'partials/bg-alignment';
+@import 'partials/_bg-utilities';
+// @import './partials/_bg-scrolling';
+
+@import 'partials/_bg-hover';
+// @import './partials/_bg-grids';
+
+@import 'partials/_bg-elements';
+@import 'partials/bg-icon';
+@import 'partials/bg-media';

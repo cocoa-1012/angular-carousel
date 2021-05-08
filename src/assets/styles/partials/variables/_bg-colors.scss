@@ -1,0 +1,650 @@
+// @import 'bg-mixins';
+
+@mixin t-color($text-color: $bg-secondary) {
+    color: $text-color;
+}
+
+@mixin bg-color($background-color: $bg-base) {
+    background-color: $background-color;
+}
+
+// Light pallete
+$bg-primary-palette: (base: #0b1940, //primary base
+    50: #e2e3e8,
+    100: #b6bac6,
+    200: #858ca0,
+    300: #545e79,
+    400: #303c5d,
+    500: #0b1940,
+    600: #0a163a,
+    700: #081232,
+    800: #060e2a,
+    900: #03081c,
+    A100: #5a6fff,
+    A200: #2742ff,
+    A400: #001ef3,
+    A700: #001bda,
+    contrast: (50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #ffffff,
+        A200: #ffffff,
+        A400: #ffffff,
+        A700: #ffffff,
+    ),
+);
+
+$bg-accent-palette: (base: #2c4bff, // base
+    50: #e6e9ff,
+    100: #c0c9ff,
+    200: #96a5ff,
+    300: #6b81ff,
+    400: #4c66ff,
+    500: #2c4bff,
+    600: #2744ff,
+    700: #213bff,
+    800: #1b33ff,
+    900: #1023ff,
+    A100: #ffffff,
+    A200: #f8f9ff,
+    A400: #c5c9ff,
+    A700: #acb1ff,
+    contrast: (50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+// Greys
+$bg-app-background: #f9f9fa !default;
+$bg-light-grey: #dadad6 !default;
+$bg-off-white: #f5f5eb !default;
+$bg-sidenav: #efefef !default;
+$bg-white: #ffffff;
+$bg-white-disabled: rbga (255, 255, 255, 0.38);
+$bg-white-label: rbga (255, 255, 255, 0.60);
+$bg-base: #f3f3f3 !default;
+
+$bg-secondary-2: #4d79f4 !default;
+
+$bg-background: #e8e6f2 !default;
+
+$bg-card-header: rgba(0, 0, 0, 0.04) !default;
+
+// not used
+$bg-charcoal: #2e2e2b !default;
+$bg-dark-grey: #b8b8b0 !default;
+
+// BG illustrations collors:
+$bg-il-yellow: #FFEE9C;
+$bg-il-gold: #EAB124;
+$bg-il-salmon: #FF8B78;
+$bg-il-red:#BA3500;
+$bg-il-dark-red: #7F0F04;
+$bg-il-dark-blue: #131A59;
+$bg-il-light-green: #71E289;
+$bg-il-secondary: #3360FF;
+$bg-il-olive: #B3AC0C;
+
+$bg-site-cards: #F4F0EA;
+
+
+$bg-green: #00d482 !default;
+// $bg-background: #f5f5eb !default;
+// $bg-card-header: #e8e6f2 !default;
+// $bg-card-header: #F3F4FA !default;
+
+// $bg-card-header: #F2EDE6 !default;
+
+// $bg-card-header: #eaeaef !default;
+$bg-secondary: #2c4bff !default;
+$bg-success: #2c4bff !default;
+$bg-primary: #0b1940 !default;
+// $bg-base: #f0ecf5 !default;
+// $bg-base: #f4f4f4 !default;
+$bg-danger: #ff4b33 !default;
+// another red idea: #ff002f
+// another red idea: ##d60032
+
+// Black and white
+
+$bg-disabled: rgba(0, 0, 0, 0.38);
+$bg-label: rgba(0, 0, 0, 0.6);
+$bg-label-dark: rgba(0, 0, 0, 0.87);
+$bg-label-white: rgba(255, 255, 255, 0.6);
+$bg-black: rgb(66, 14, 14);
+
+$bg-warning: #faab3d !default;
+$bg-nav-menu: #707070 !default;
+$bg-topnav-hover: rgba(209, 209, 240, 0.2) !default;
+$bg-primary-800: #060e2a;
+
+// app yellow
+// $bg-yellow: #f2ed3b;
+
+$bg-yellow3: #f8df84;
+
+// this is very stark, only for colors on blue
+$bg-yellow: #fae44a;
+$bg-yellow2: #facb32;
+$bg-dark-blue: lighten($color: $bg-primary-800, $amount: 30%);
+
+$bg-sidenav-hover: rgba(0, 0, 0, 0.04);
+
+$black: ('base': rgb(66, 14, 14), //black
+    '38': rgba(0, 0, 0, 0.38), //black 0.38
+    '60': rgba(0, 0, 0, 0.6), //black 0.6
+    '87': rgba(0, 0, 0, 0.87), //black 0.87
+);
+
+$white: ('base': rgba(255, 255, 255, 1), //white
+    '38': rgba(255, 255, 255, 0.38), //white 0.35
+    '60': rgba(255, 255, 255, 0.6), //white 0.6
+    '62': rgba(255, 255, 255, 0.62), //white 0.62
+);
+
+// Linear gradients
+
+$bg-yellow-gradient-2: linear-gradient(180deg,  var(--bg-il-gold), var(--yellow2));
+
+$bg-blue-gradient-5: linear-gradient(to right, #203cb8 0%, #2644de 11%, #2a49f6 20%, #2c4bff 45%, #183388 100%);
+$bg-blue-gradient-2: linear-gradient(to right, #3F81FF, #2C4BFF 100%);
+
+$bg-primary-gradient: linear-gradient(to bottom, #03081c, #183388 100%);
+$bg-primary-gradient-inverse: linear-gradient(to top, #183388, #03081c 100%);
+// Original from website
+// linear-gradient(to right, #203cb8 0%, #2644de 11%, #2a49f6 20%, #2c4bff 25%, #1e39a9 70%, #183388 100%) !important;
+
+
+
+
+// ####################################### Text Styles ###########################################
+
+// $primary-color: map-get($bg-primary-palette, 'base') !default;
+// $primary-color-light: lighten(map-get($bg-primary-palette, 'base'), 15%) !default;
+// $primary-color-dark: darken(map-get($bg-primary-palette, 'base'), 15%) !default;
+
+// $primary-color-50: map-get($bg-primary-palette, '50') !default;
+// $primary-color-100: map-get($bg-primary-palette, '100') !default;
+// $primary-color-200: map-get($bg-primary-palette, '200') !default;
+// $primary-color-300: map-get($bg-primary-palette, '300') !default;
+// $primary-color-400: map-get($bg-primary-palette, '400') !default;
+// $primary-color-500: map-get($bg-primary-palette, '500') !default;
+// $primary-color-600: map-get($bg-primary-palette, '600') !default;
+// $primary-color-700: map-get($bg-primary-palette, '700') !default;
+// $primary-color-800: map-get($bg-primary-palette, '800') !default;
+// $primary-color-900: map-get($bg-primary-palette, '900') !default;
+
+// $secondary-color: map-get($bg-accent-palette, 'base') !default;
+// $secondary-color-light: lighten(map-get($bg-accent-palette, 'base'), 15%) !default;
+// $secondary-color-dark: darken(map-get($bg-accent-palette, 'base'), 15%) !default;
+
+// $secondary-color-50: map-get($bg-accent-palette, '50') !default;
+// $secondary-color-100: map-get($bg-accent-palette, '100') !default;
+// $secondary-color-200: map-get($bg-accent-palette, '200') !default;
+// $secondary-color-300: map-get($bg-accent-palette, '300') !default;
+// $secondary-color-400: map-get($bg-accent-palette, '400') !default;
+// $secondary-color-500: map-get($bg-accent-palette, '500') !default;
+// $secondary-color-600: map-get($bg-accent-palette, '600') !default;
+// $secondary-color-700: map-get($bg-accent-palette, '700') !default;
+// $secondary-color-800: map-get($bg-accent-palette, '800') !default;
+// $secondary-color-900: map-get($bg-accent-palette, '900') !default;
+
+// .primary {
+//     background-color: $primary-color !important;
+
+//     &-text {
+//         color: $primary-color !important;
+//     }
+
+
+//     &-50 {
+//         background-color: $primary-color-50 !important;
+
+//         &-text {
+//             color: $primary-color-50 !important;
+//         }
+//     }
+
+//     &-100 {
+//         background-color: $primary-color-100 !important;
+
+//         &-text {
+//             color: $primary-color-100 !important;
+//         }
+//     }
+
+//     &-200 {
+//         background-color: $primary-color-200 !important;
+
+//         &-text {
+//             color: $primary-color-200 !important;
+//         }
+//     }
+
+//     &-300 {
+//         background-color: $primary-color-300 !important;
+
+//         &-text {
+//             color: $primary-color-300 !important;
+//         }
+//     }
+
+//     &-400 {
+//         background-color: $primary-color-400 !important;
+
+//         &-text {
+//             color: $primary-color-400 !important;
+//         }
+//     }
+
+//     &-500 {
+//         background-color: $primary-color-500 !important;
+
+//         &-text {
+//             color: $primary-color-500 !important;
+//         }
+//     }
+
+//     &-600 {
+//         background-color: $primary-color-600 !important;
+
+//         &-text {
+//             color: $primary-color-600 !important;
+//         }
+//     }
+
+//     &-700 {
+//         background-color: $primary-color-700 !important;
+
+//         &-text {
+//             color: $primary-color-700 !important;
+//         }
+//     }
+
+//     &-800 {
+//         background-color: $primary-color-800 !important;
+
+//         &-text {
+//             color: $primary-color-800 !important;
+//         }
+//     }
+
+//     &-900 {
+//         background-color: $primary-color-900 !important;
+
+//         &-text {
+//             color: $primary-color-900 !important;
+//         }
+//     }
+// }
+
+// .secondary {
+//     background-color: $secondary-color !important;
+
+//     &-text {
+//         color: $secondary-color !important;
+//     }
+
+//     &-light {
+//         background-color: $secondary-color-light !important;
+
+//         &-text {
+//             color: $secondary-color-light !important;
+//         }
+//     }
+
+//     &-dark {
+//         background-color: $secondary-color-dark !important;
+
+//         &-text {
+//             color: $secondary-color-dark !important;
+//         }
+//     }
+
+//     &-50 {
+//         background-color: $secondary-color-50 !important;
+
+//         &-text {
+//             color: $secondary-color-50 !important;
+//         }
+//     }
+
+//     &-100 {
+//         background-color: $secondary-color-100 !important;
+
+//         &-text {
+//             color: $secondary-color-100 !important;
+//         }
+//     }
+
+//     &-200 {
+//         background-color: $secondary-color-200 !important;
+
+//         &-text {
+//             color: $secondary-color-200 !important;
+//         }
+//     }
+
+//     &-300 {
+//         background-color: $secondary-color-300 !important;
+
+//         &-text {
+//             color: $secondary-color-300 !important;
+//         }
+//     }
+
+//     &-400 {
+//         background-color: $secondary-color-400 !important;
+
+//         &-text {
+//             color: $secondary-color-400 !important;
+//         }
+//     }
+
+//     &-500 {
+//         background-color: $secondary-color-500 !important;
+
+//         &-text {
+//             color: $secondary-color-500 !important;
+//         }
+//     }
+
+//     &-600 {
+//         background-color: $secondary-color-600 !important;
+
+//         &-text {
+//             color: $secondary-color-600 !important;
+//         }
+//     }
+
+//     &-700 {
+//         background-color: $secondary-color-700 !important;
+
+//         &-text {
+//             color: $secondary-color-700 !important;
+//         }
+//     }
+
+//     &-800 {
+//         background-color: $secondary-color-800 !important;
+
+//         &-text {
+//             color: $secondary-color-800 !important;
+//         }
+//     }
+
+//     &-900 {
+//         background-color: $secondary-color-900 !important;
+
+//         &-text {
+//             color: $secondary-color-900 !important;
+//         }
+//     }
+// }
+
+
+$color-black: map-get($black, 'base') !default;
+$color-black-38: map-get($black, '38') !default;
+$color-black-60: map-get($black, '60') !default;
+$color-black-87: map-get($black, '87') !default;
+$color-white: map-get($white, 'base') !default;
+$color-white-38: map-get($white, '38') !default;
+$color-white-60: map-get($white, '60') !default;
+$color-white-62: map-get($white, '62') !default;
+
+.disabled-text {
+    color: $color-black-38 !important;
+}
+
+.color {
+    &-black {
+        color: $color-black;
+
+        &-opacity {
+            &-038 {
+                color: $color-black-38;
+            }
+
+            &-060 {
+                color: $color-black-60;
+            }
+
+            &-087 {
+                color: $color-black-87;
+            }
+        }
+    }
+
+    &-white {
+        color: $color-white !important;
+
+        &-opacity {
+            &-038 {
+                color: $color-white-38 !important;
+            }
+
+            &-060 {
+                color: $color-white-60;
+            }
+
+            &-062 {
+                color: $color-white-62;
+            }
+        }
+    }
+}
+
+
+// What we need to make avaiable
+
+.t-primary {
+    @include t-color ($bg-primary);
+}
+
+.bg-primary {
+    @include bg-color ($bg-primary);
+}
+
+.bg-primary-800,
+.primary-800 {
+    background-color: map-get($bg-primary-palette, '800');
+
+}
+
+.primary-700 {
+    background-color: map-get($bg-primary-palette, '700');
+}
+
+.t-secondary,
+.t-success {
+    @include t-color ($bg-secondary);
+}
+
+.bg-secondary,
+.secondary {
+    @include bg-color ($bg-secondary);
+}
+
+.t-secondary-400 {
+    color: map-get($bg-accent-palette, '400');
+}
+
+.bg-base {
+    @include bg-color;
+}
+
+.bg-grey {
+    @include bg-color ($bg-light-grey);
+
+}
+
+.bg-salmon {
+    @include bg-color ($bg-il-salmon);
+}
+
+.bg-gold {
+    @include bg-color ($bg-il-gold);
+}
+
+.bg-red {
+    @include bg-color ($bg-il-red);
+}
+
+.bg-dark-red {
+    @include bg-color ($bg-il-dark-red);
+}
+
+.bg-light-green {
+    @include bg-color ($bg-il-light-green);
+}
+
+.bg-secondary-3 {
+    @include bg-color ($bg-il-secondary);
+}
+
+.bg-olive {
+    @include bg-color ($bg-il-olive);
+}
+
+.bg-yellow-2 {
+    @include bg-color ($bg-il-yellow);
+}
+
+.bg-white {
+    background-color: $bg-white;
+}
+
+.bg-app-background {
+    background-color: $bg-app-background
+}
+
+.bg-card-header {
+    background-color: $bg-card-header;
+}
+
+
+
+// .bg-transparent {
+//     background-color: transparent;
+// }
+
+.t-disabled,
+.disabled {
+    @include t-color ($bg-disabled);
+}
+
+.label,
+.t-label {
+    @include t-color ($bg-label);
+}
+
+.t-danger {
+    @include t-color ($bg-danger);
+}
+
+.bg-danger {
+    @include bg-color ($bg-danger);
+}
+
+.t-warning {
+    @include t-color ($bg-warning);
+}
+
+.bg-warning {
+    @include bg-color ($bg-warning);
+}
+
+.t-white-med,
+.label-white {
+    @include t-color ($bg-white-label);
+}
+
+.t-white {
+    color: map-get($white, 'base') !important;
+}
+
+.t-white-med,
+.label-white {
+    color: map-get($white, '60');
+}
+
+
+
+
+// .success {
+//     background-color: $bg-success !important;
+
+//     &-text {
+//         color: $bg-success !important;
+//     }
+// }
+
+// .warning {
+//     background-color: $bg-warning !important;
+
+//     &-text {
+//         color: $bg-warning !important;
+//     }
+// }
+
+.off-white {
+    background-color: $bg-off-white !important;
+
+    &-text {
+        color: $bg-off-white !important;
+    }
+}
+
+.light-grey {
+    background-color: $bg-light-grey !important;
+
+    &-text {
+        color: $bg-light-grey !important;
+    }
+}
+
+.bg-base {
+    background-color: $bg-base !important;
+
+    &-text {
+        color: $bg-base !important;
+    }
+}
+
+
+.bg-dark-blue {
+    background-color: $bg-il-dark-blue !important;
+
+    &-text {
+        color: $bg-il-dark-blue !important;
+    }
+}
+
+// Used by ejs grid for now, remove color afterwards
+
+// .dark-grey {
+//     background-color: $bg-dark-grey !important;
+
+//     &-text {
+//         color: $bg-dark-grey !important;
+//     }
+// }

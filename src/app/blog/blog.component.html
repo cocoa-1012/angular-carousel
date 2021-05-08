@@ -1,0 +1,191 @@
+<div class="bg-blog">
+  <!-- <div class="bg-blog-sidenav">
+    <div class="bg-blog-sidenav-item">
+      <a>Link 1</a>
+    </div>
+    <div class="bg-blog-sidenav-item">
+      <a>Link 1</a>
+    </div>
+    <div class="bg-blog-sidenav-item">
+      <a>Link 1</a>
+    </div>
+  </div>
+   -->
+
+  <div class="bg-blog-content">
+
+    <!-- Hero article -->
+    <section class="bg-blog-content-hero-article">
+      <article>
+        <figure class="bg-blog-content-hero-article-figure">
+          <a href="/blog/post">
+            <img class="bg-blog-content-hero-article-figure__image"
+              src="https://blog.intercomassets.com/blog/wp-content/uploads/2020/10/Engineering-Management-Hero-1200x560.jpg.optimal.jpg"></a>
+        </figure>
+        <div class="bg-blog-content-hero-article-inner">
+          <div class="bg-blog-content-hero-article-inner__description">
+            EVENT PRODUCTION - 9 min read
+          </div>
+          <header>
+            <h2 class="blog-h2">
+              <a href="/blog/post">
+                This is the fabulous blog title</a>
+            </h2>
+          </header>
+          <div class="bg-blog-content-hero-article-inner__preview">
+            For many engineers, making a move into people management can feel like a fork in the road – but at Intercom,
+            it isn’t an irreversible choice in your career path. Here’s why we think management can actually make you a
+            stronger engineer.
+          </div>
+
+          <div class="bg-blog-content-hero-article-inner-author">
+            <div class="">
+              <img class="bg-blog-content-hero-article-inner-author__image"
+                src="https://blog.intercomassets.com/blog/wp-content/uploads/2017/01/IMG_3603.jpg.optimal.jpg"
+                alt="Oliver Gattermayr">
+            </div>
+            <div class="bg-blog-content-hero-article-inner-author__description">
+              <div class="bg-blog-content-hero-article-inner-author__description-name">
+                OLIVER GATTERMAYR
+              </div>
+              <div class="bg-blog-content-hero-article-inner-author__description-title">
+                Founder and CEO
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+
+    <section class="bg-blog-content-grid-thirds">
+      <article class="bg-blog-article" *ngFor="let item of posts">
+        <figure class="bg-blog-article-figure">
+          <a href="/blog/post">
+            <img class="bg-blog-article-figure__image"
+              src="https://blog.intercomassets.com/blog/wp-content/uploads/2020/10/Engineering-Management-Hero-1200x560.jpg.optimal.jpg"></a>
+        </figure>
+        <div class="bg-blog-article-inner">
+          <div class="bg-blog-article-inner__description">
+            {{item.description}}
+          </div>
+          <header>
+            <h2 class="blog-h2">
+              <a href="/blog/post">
+                {{item.title}}</a>
+            </h2>
+          </header>
+          <div class="bg-blog-article-inner__preview">
+            {{item.preview}}
+          </div>
+
+          <div class="bg-blog-article-inner-author">
+            <div class="">
+              <img class="bg-blog-article-inner-author__image"
+                src="https://blog.intercomassets.com/blog/wp-content/uploads/2017/01/IMG_3603.jpg.optimal.jpg"
+                alt="Oliver Gattermayr">
+            </div>
+            <div class="bg-blog-article-inner-author__description">
+              <div class="bg-blog-article-inner-author__description-name">
+                {{item.author}}
+              </div>
+              <div class="bg-blog-article-inner-author__description-title">
+                {{item.authorTitle}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="bg-blog-content-grid-thirds-cta">
+        This is a cta
+      </div>
+    </section>
+
+    <section class="bg-blog-content-signup">
+      <div class="bg-blog-content-signup-content">
+        <p class="bg-blog-content-signup-content__title">
+          Industry insights you won’t delete. Delivered to your inbox weekly.
+        </p>
+
+        <div class="bg-blog-content-signup-content__cta">
+          <mat-form-field>
+            <input matInput placeholder="Your email address">
+          </mat-form-field>
+
+          <button class="btn-main t-white">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-blog-content-grid-halfs">
+      <article class="bg-blog-article" *ngFor="let item of posts | slice: 0:4">
+        <figure class="bg-blog-article-figure">
+          <a href="/blog/post">
+            <img class="bg-blog-article-figure__image"
+              src="https://blog.intercomassets.com/blog/wp-content/uploads/2020/10/Engineering-Management-Hero-1200x560.jpg.optimal.jpg"></a>
+        </figure>
+        <div class="bg-blog-article-inner">
+          <div class="bg-blog-article-inner__description">
+            {{item.description}}
+          </div>
+          <header>
+            <h2 class="blog-h2">
+              <a href="/blog/post">
+                {{item.title}}</a>
+            </h2>
+          </header>
+          <div class="bg-blog-article-inner__preview">
+            {{item.preview}}
+          </div>
+
+          <div class="bg-blog-article-inner-author">
+            <div class="">
+              <img class="bg-blog-article-inner-author__image"
+                src="https://blog.intercomassets.com/blog/wp-content/uploads/2017/01/IMG_3603.jpg.optimal.jpg"
+                alt="Oliver Gattermayr">
+            </div>
+            <div class="bg-blog-article-inner-author__description">
+              <div class="bg-blog-article-inner-author__description-name">
+                {{item.author}}
+              </div>
+              <div class="bg-blog-article-inner-author__description-title">
+                {{item.authorTitle}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="bg-blog-more-posts">
+      <a class="bg-blog-more-posts-no-numbers" href="https://www.blueghost.co/blog/page/2">
+        See More posts &nbsp; <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </section>
+
+    <section class="bg-blog-footer-cta">
+      <p class="bg-blog-footer-cta__title">
+        Get in our newsletter guestlist.
+      </p>
+
+      <div class="bg-blog-footer-cta__form">
+        <div class="bg-blog-footer-cta__form-input">
+          <mat-form-field>
+            <input matInput placeholder="Your email address">
+          </mat-form-field>
+        </div>
+
+        <div class="bg-blog-footer-cta__form-button"><button class="btn-main t-white">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!--  -->
+  </div>
+</div>

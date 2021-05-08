@@ -1,0 +1,40 @@
+// Text align
+
+.t-center {
+  text-align: center;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
+// alignment
+.v-center {
+  vertical-align: center;
+}
+
+.v-align {
+  display: flex;
+  align-items: center;
+}
+
+// Flex
+
+.flex-r-c {
+  display: flex;
+  align-items: center;
+}
+
+.justify-end {
+  justify-self: end;
+}
+
+.flex-c-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

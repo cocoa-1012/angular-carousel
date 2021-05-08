@@ -1,0 +1,59 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+html,
+body {
+  // width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+.bgws {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: $bg-topnav-height 1fr;
+  grid-template-areas:
+    "bgws__topnav"
+    "bgws__content";
+    // "bgws__footer" !important;
+
+  @include for-size (xs) {
+    // grid-template-rows: 56px minmax(0, 1fr) 273px;
+    grid-template-rows: 72px 1fr;
+  }
+
+
+  &__topnav {
+    grid-area: bgws__topnav;
+    order: 1;
+    max-width: 100vw;
+  }
+
+  &__content {
+    grid-area: bgws__content;
+    display: grid;
+    min-height: calc(100vh - 83px);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 'bgws__body' 'bgws__footer';
+
+    @include for-size (xs) {
+    min-height: calc(100vh - 72px);
+
+    }
+
+    .bgws__body {
+      grid-area: bgws__body;
+      order: 2;
+      // min-height: 100%;
+    }
+
+    .bgws__footer {
+      grid-area: bgws__footer;
+      order: 3;
+
+      @include for-size (gt-lg) {
+        margin-top: -1rem;
+      }
+    }
+  }
+}

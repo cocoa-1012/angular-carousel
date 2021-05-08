@@ -1,0 +1,58 @@
+@import '_bg-texts';
+@import '_bg-vars-and-mixins';
+
+@mixin bg-copy__overline {
+    padding-bottom: 2rem;
+    @include justme;
+
+    @include for-size (xs) {
+      padding-bottom: 1rem;
+    }
+}
+
+@mixin bg-copy__subheading ($padding-top: 2rem) {
+    padding-top: $padding-top;
+    @include bg-feature-text(subheading-dark);
+
+    // @include for-size (xs) {
+    //   padding-top: 2rem;
+    // }
+}
+
+
+@mixin bg-feature-2fr ($grid-gap: 4rem, $min-height: 95vh) {
+  display: grid;
+  grid-gap: $grid-gap;
+  min-height: $min-height;
+  width: $section-width;
+  margin: $section-margin;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include for-size (xs) {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+    grid-gap: 1rem;
+    margin: 4rem auto;
+
+  }
+}
+
+@mixin bg-feature-body {
+  display: grid;
+  height: 100%;
+  grid-gap: 2rem;
+}
+
+@mixin bg-grid($xaxis: center, $yaxis: start) {
+  display: grid;
+  align-items: $xaxis;
+  justify-items: $yaxis;
+}
+
+// Feature vertical
+
+@mixin bg-feature-vertical {
+  display: grid;
+
+}
+

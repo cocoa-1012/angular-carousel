@@ -1,0 +1,78 @@
+<!-- content starts -->
+<div class="bg-hero">
+
+  <div class="bg-hero-wrapper">
+
+    <div class="bg-hero-header">
+      <span class="justme t-yellow " *ngIf="showTyped">
+        <span id="typed"></span>
+      </span>
+      <div class="bg-hero-header__heading">
+        <h1 [class]="headerColor">
+          {{header}}
+        </h1>
+      </div>
+
+
+      <div class="bg-hero-header__subheading">
+        <p [class]="subheaderColor">
+          <!-- Managing live events sucked, until now. Blueghost allows you to
+      streamline your live event operations and focus on the experience.  -->
+
+          {{subheader}}
+          <!-- Blueghost helps you streamline your live event operations, so you can focus on what you do best. -->
+        </p>
+      </div>
+
+      <div class="bg-hero-header__email-form" *ngIf="emailForm">
+        <bgws-inline-email></bgws-inline-email>
+      </div>
+    </div>
+
+    <div class="bg-hero-media">
+      <img alt="illustration" [src]="media" class="bg-hero-media__image">
+    </div>
+
+
+  </div>
+
+  <div class="bg-hero-customer-slider" *ngIf="testimonials">
+    <div class="bg-hero-customer-slider-wrapper">
+      <p>
+        Join hundreds of entertainment professionals
+      </p>
+
+      <div class="bg-hero-customer-slider-grid">
+        <div class="bg-hero-customer-slider-grid-logo">
+          <img alt="company" src="">
+        </div>
+        <div class="bg-hero-customer-slider-grid-logo">
+          <img alt="company" src="">
+        </div>
+        <div class="bg-hero-customer-slider-grid-logo">
+          <img alt="company" src="">
+        </div>
+        <div class="bg-hero-customer-slider-grid-logo">
+          <img alt="company" src="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="bg-hero-body">
+      <div class="bg-hero-body-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8HxuRUGKZv4" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div> -->
+
+  <!-- <img src="./../../assets/images/background/background-1-top.svg" alt="hero-background-1"
+      class="bg-hero-background-1-top"> -->
+
+</div>
+
+
+<!-- content ends -->

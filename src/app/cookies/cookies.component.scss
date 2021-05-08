@@ -1,0 +1,58 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+
+.cookies-grid {
+  background-color: var(--cookie-grey);
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-areas: 'cookie-illustration cookie-copy';
+  grid-column-gap: 1rem;
+
+  @include for-size (xs) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'cookie-illustration'
+      'cookie-copy';
+    justify-items: center;
+    grid-row-gap: 1rem;
+
+    // margin: auto 0;
+  }
+
+  .cookie-illustration {
+    grid-area: cookie-illustration;
+    width: 200px;
+
+    @include for-size (xs) {
+      width: 100px;
+    }
+
+  }
+
+  .cookie-copy {
+    grid-area: cookie-copy;
+    @include for-size (xs) {
+      text-align: center;
+    }
+
+    .cookie-title {
+      h6 {
+        margin-left: 0 !important;
+      }
+    }
+
+    .cookie-cta {
+      h6 {
+        margin: 8px;
+      }
+      @include for-size (xs) {
+        display: grid;
+        place-items: center center;
+      }
+
+      //   }
+
+    }
+  }
+}

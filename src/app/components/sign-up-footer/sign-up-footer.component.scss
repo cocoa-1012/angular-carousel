@@ -1,0 +1,106 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+
+.bg-signup-ctafooter {
+  margin-bottom: -8px;
+  $self: &;
+  background-color: $bg-primary-800;
+
+  &-body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'bg-signup-ctafooter__logo'
+      'bg-signup-ctafooter__heading'
+      'bg-signup-ctafooter__subheading'
+      'bg-signup-ctafooter__description'
+      'bg-signup-ctafooter__cta';
+    margin-bottom: 4em;
+    padding: 0 1rem;
+    grid-gap: 1rem;
+
+    text-align: center;
+
+
+
+    .bg-signup-ctafooter__logo {
+      grid-area: bg-signup-ctafooter__logo;
+      padding-top: 4rem;
+
+      @include for-size (xs) {
+        padding-top: 3rem;
+      }
+
+      .bg-signup-ctafooter__logo-image {
+        max-width: 18rem;
+      }
+
+    }
+
+    .bg-signup-ctafooter__heading {
+      grid-area: bg-signup-ctafooter__heading;
+      @include justme($bg-yellow, 80px);
+
+      &-underline-container {
+        display: flex;
+
+        @include for-size (xs) {
+          margin-top: -0.5rem;
+
+        }
+
+        #{ $self}__heading-underline {
+          max-width: 4em;
+          padding-left: 10rem;
+
+          @include for-size (gt-xs) {
+            max-width: 8em;
+            height: 12px;
+
+            padding-left: 10rem;
+            padding-top: 0.5rem;
+          }
+        }
+      }
+
+    }
+
+    .bg-signup-ctafooter__subheading {
+      grid-area: bg-signup-ctafooter__subheading;
+    }
+
+    .bg-signup-ctafooter__description {
+      grid-area: bg-signup-ctafooter__description;
+      @include t-color ($bg-white);
+
+    }
+
+    .bg-signup-ctafooter__cta {
+      grid-area: bg-signup-ctafooter__cta;
+      margin: 2rem 0 0 0;
+
+
+      @include for-size (xs) {
+        margin: 1rem 0;
+      }
+    }
+
+  }
+
+  &-waves {
+    &__small {
+      display: none;
+      @include for-size (lt-md) {
+        display: block;
+      }
+    }
+    &__large {
+        display: none;
+
+      @include for-size (gt-md) {
+        display: block;
+      }
+    }
+  }
+}

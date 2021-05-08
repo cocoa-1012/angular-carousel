@@ -1,0 +1,982 @@
+@import 'src/assets/styles/partials/_bg-vars-and-mixins';
+@import 'src/assets/styles/partials/_bg-media';
+
+
+.bg-home {
+  $self: &;
+  display: grid;
+
+  @include for-size (xs) {}
+
+  //   Hero
+  &-hero {
+    $self: &;
+    display: grid;
+    min-height: 65vh;
+    text-align: center;
+    background-color: $bg-primary;
+
+    &-wrapper {
+      padding: 4vw 6vw;
+      margin: $section-margin;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      grid-gap: 2rem;
+
+      @include for-size(lt-md) {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 4vw;
+      }
+
+      #{ $self }-header {
+        max-width: 800px;
+
+        h1 {
+          padding-top: 2rem;
+          font-size: 64px;
+          line-height: 68px;
+          color: var(--white);
+
+          @include for-size(xs) {
+            font-size: 50px;
+            line-height: 54px;
+          }
+        }
+
+        &__subheading {
+          max-width: 800px;
+          padding: 3rem 0;
+          margin: $section-margin;
+          @include t-color ($bg-white);
+
+          @include for-size (xs) {
+            padding: 2rem 0;
+          }
+
+        }
+
+        &-email-form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          grid-gap: 1rem;
+
+          @include for-size (xs) {
+            display: grid;
+            grid-gap: 1rem;
+          }
+          // @include for-size (xl) {
+          //   display: grid;
+          //   grid-gap: 1rem;
+          // }
+
+
+        
+
+          &__input-wrapper {
+            input {
+              min-width: 16rem;
+              line-height: 1.4;
+              border: 2px solid $bg-secondary;
+              border-radius: 8px;
+              font-size: 1rem;
+              padding: 1.3rem;
+              // height: 3.25rem;
+
+
+
+              @include for-size (xs) {
+                min-width: 18rem;
+              }
+              @include for-size (xl) {
+                // border-radius: 6px;
+                min-width: 18rem;
+                font-size: 0.8vw;
+              }
+            }
+          }
+
+          &__cta {
+            // padding: 0 1rem;
+            display: grid;
+            // place-items: center;
+            // background-color: $bg-secondary;
+            // border-radius: 0 6px 6px 0;
+            // cursor: pointer;
+            // width: max-content;
+            // color: var(--white);
+            // font-size: 1rem;
+
+
+            .bg-btn-main {
+              padding: 0.6vw 1.2vw;
+              font-size: 1.4rem;
+
+
+              @include for-size (xs) {
+                padding: 1rem;
+                width: 100%;
+              justify-self: center;
+
+              }
+
+            }
+
+            &__text,
+            a {
+              place-self: center;
+              color: var(--white);
+              width: max-content;
+
+              &-icon {
+                &mat-icon {
+                  @include bg-icon (32px);
+                }
+              }
+            }
+          }
+
+        }
+
+
+
+        p {
+          font-size: 26px;
+          line-height: 1.4;
+
+          @include for-size (xs) {
+            font-size: 22px;
+          }
+        }
+      }
+
+      #{ $self }-illustration {
+        max-width: 50rem;
+      }
+
+    }
+
+    &-customer-slider {
+      padding-top: 2rem;
+      $self: &;
+      text-align: center;
+      background-color: $bg-primary;
+
+      &-wrapper {
+        margin: $section-margin;
+        @include t-color ($bg-label-white);
+        max-width: 1000px;
+        display: grid;
+        grid-gap: 1rem;
+
+        p {
+          margin: $section-margin;
+          @include t-color ($bg-white);
+
+          max-width: 550px;
+          font-size: 1.5rem;
+          line-height: 1.3;
+        }
+
+        #{ $self }-grid {
+          display: grid;
+          grid-auto-flow: column;
+
+          img {
+            max-height: 3rem;
+            max-width: 10rem;
+          }
+
+        }
+      }
+
+    }
+
+    &-background-1-top {
+      margin-top: -12vw;
+
+      @include for-size (gt-lg) {
+        margin-top: -24vw;
+      }
+
+      @include for-size (xs) {
+        margin-top: 0;
+      }
+
+    }
+
+  }
+
+  //   Features
+  &-features {
+    margin-top: -1px;
+    $self: &;
+    background-image: linear-gradient(to right, #203cb8 0%, #2644de 11%, #2a49f6 20%, #2c4bff 25%, #1e39a9 70%, #183388 100%);
+    padding: 2rem 0;
+
+    @include for-size (lt-md) {
+      padding-top: 1.5em;
+    }
+
+    &-wrapper {
+      display: grid;
+      grid-gap: 2rem;
+      width: $section-width;
+
+      @include for-size (lg) {
+        width: 86vw;
+      }
+
+      // @include for-size (xl) {
+      // width: 86vw;
+      // }
+
+      margin: $section-margin;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: ' bg-home-features-highlight bg-home-features-list';
+
+      @include for-size (lt-md) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: ' bg-home-features-list'
+          'bg-home-features-highlight'
+          'bg-home-features-mswitch'
+          'bg-home-features__cta';
+        width: 96vw;
+        padding-bottom: 2rem;
+        grid-gap: unset;
+      }
+
+      @include for-size (gt-lg) {
+        max-width: 60vw;
+      }
+
+      #{ $self }-list {
+        grid-area: bg-home-features-list;
+
+
+        #{ $self }-title {
+          display: grid;
+          padding-bottom: 3rem;
+
+          @include for-size (xs) {
+            padding-bottom: 1rem;
+          }
+
+          &__heading-overline {
+            @include justme($bg-yellow);
+            padding-bottom: 1.5rem;
+
+            @include for-size (xs) {
+              padding-bottom: 0.5rem;
+            }
+          }
+
+          &__heading {
+            color: var(--white);
+          }
+
+          &__subheading {
+            padding-top: 2rem;
+            color: var(--white);
+          }
+        }
+
+        #{ $self }-list-items {
+          display: grid;
+          grid-gap: 1.5rem;
+
+          @include for-size (lt-md) {
+            display: none;
+          }
+
+          #{ $self }-item {
+            max-width: max-content;
+
+            &__title {
+              display: flex;
+              color: var(--white);
+
+              &:hover {
+                cursor: pointer;
+              }
+
+            }
+
+            &-active {
+              border-radius: 4px;
+              color: var(--yellow);
+
+              strong,
+              mat-icon {
+                color: var(--yellow);
+              }
+
+            }
+
+            transition: all ease 0.4;
+
+          }
+        }
+
+        // 1
+        &__cta {
+          padding-top: 2rem;
+
+          @include for-size (lt-md) {
+            padding-top: 1rem;
+          }
+
+
+          display: none;
+
+          @include for-size (gt-md) {
+            display: flex;
+          }
+
+          &-button {
+            // flex: 1;
+          }
+        }
+
+
+
+      }
+
+      #{ $self }__cta {
+        display: none;
+
+        @include for-size (lt-md) {
+          display: flex;
+        }
+
+        align-items: flex-end;
+        padding-top: 1rem;
+
+        &-button {
+          // flex: 1;
+        }
+      }
+
+      #{ $self }-mswitch {
+        grid-area: bg-home-features-mswitch;
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) 1fr;
+        align-items: center;
+
+        @include for-size (gt-md) {
+          display: none;
+        }
+
+        &-items {
+          display: flex;
+
+          #{ $self }-mswitch__item {
+            margin-right: 1rem;
+            list-style-type: none;
+            border-color: transparent;
+
+            &-button {
+              padding: 0.5rem;
+              border: none;
+              border-radius: 4px;
+              color: transparent;
+              cursor: pointer;
+              background-color: $bg-base;
+
+              &:focus {
+                outline: none;
+              }
+
+            }
+
+            &-active {
+              #{ $self }-mswitch__item-button {
+                background-color: $bg-il-salmon;
+              }
+            }
+          }
+
+        }
+
+        #{ $self }-selector-switch {
+          display: flex;
+          padding: 1rem;
+          grid-gap: 1rem;
+          justify-self: end;
+          height: max-content;
+
+
+
+          @include for-size (lt-md) {
+            grid-gap: 1rem;
+
+            .bg-btn-yellow,
+            .bg-btn-main {
+              padding: 0.25rem;
+            }
+
+          }
+
+          .bg-btn-yellow,
+          .bg-btn-main {}
+
+          &__button .bg-btn-yellow {
+            padding: 0.25 0.75rem;
+
+            @include t-color ($bg-primary);
+            background-color: $bg-il-yellow !important;
+          }
+        }
+
+      }
+
+
+      #{ $self }-highlight {
+        grid-area: bg-home-features-highlight;
+        display: grid;
+        height: 100%;
+        border-radius: 4px;
+
+        &-media {
+
+          &__image {
+            flex-grow: 1;
+            max-width: 600px;
+
+          }
+        }
+
+        &-description {
+          justify-self: center;
+          align-self: end;
+
+          @include for-size (lt-md) {
+            padding-top: 1rem;
+          }
+
+          &__heading {
+            display: flex;
+            font-size: 1.7rem;
+            line-height: 1.4;
+            font-family: "Objektivmk2 bold", sans-serif;
+            color: var(--yellow);
+            padding-bottom: 0.5rem;
+            border-radius: 8px;
+            width: max-content;
+
+          }
+
+          &__text {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: var(--white);
+            max-width: 600px;
+
+
+            @include for-size (lt-md) {
+              font-size: 1rem;
+              padding: 0.5rem;
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  // Background image bottom
+  &-background-1-bottom {
+    padding: 0;
+    margin: -2px 0 0 0;
+    height: auto;
+    background-image: linear-gradient(transparent -5%, transparent 3%, $bg-primary 6%, lighten($bg-primary, 25%) 100%);
+  }
+
+  //   Customers
+
+
+  // Use cases carousel
+  &-solutions {
+    padding: 0 0 80px 0;
+    $self: &;
+    display: grid;
+    min-height: 65vh;
+    text-align: center;
+    background-image: linear-gradient(lighten($bg-primary, 25%) 0%, #4085ff 100%);
+
+    @include for-size (lt-md) {
+      grid-template-areas: 'bg-home-solutions-wrapper''bg-home-solutions-selector-switch''bg-home-solutions-carousel';
+    }
+
+    &-wrapper {
+      @include for-size (xs) {
+
+        grid-area: bg-home-solutions-wrapper;
+      }
+
+      max-width: 1200px;
+      margin: $section-margin;
+
+      #{ $self }-header {
+        max-width: 1024px;
+
+        &__overline {
+          @include justme;
+          color: var(--yellow);
+          padding-bottom: 1.5rem;
+        }
+
+        &__heading {
+          color: var(--white);
+        }
+
+        &__subheading {
+          max-width: 800px;
+          padding: 3rem 0;
+          margin: $section-margin;
+          @include t-color ($bg-label-white);
+
+          @include for-size (xs) {
+            padding: 1rem 0;
+          }
+        }
+
+      }
+    }
+
+    // CAROUSEL
+
+    &-carousel {
+      $self: &;
+
+      position: relative;
+      box-sizing: border-box;
+      display: block;
+      min-height: 18rem;
+      overflow: hidden;
+
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      @include for-size (gt-xs) {
+        padding-top: 1rem;
+      }
+
+      @include for-size (xs) {
+        grid-area: bg-home-solutions-carousel;
+      }
+
+
+      &-list {
+        overflow: visible;
+        transform: translate3d(0, 0, 0);
+        position: relative;
+        display: block;
+        outline: 0 !important;
+
+        #{ $self }-track {
+          // @include for-size (gt-xs) {
+          //   width: 2200px;
+          // }
+
+          // transform: translate3d(-780px, 0px, 0px);
+
+          position: relative;
+          left: 0;
+          top: 0;
+          // display: block;
+
+          display: flex;
+          grid-gap: 2rem;
+          justify-content: center;
+
+
+          &-item {
+            max-width: 295px;
+            height: max-content;
+            background-color: $bg-base;
+
+            border-radius: 4px;
+            @include mat-elevation(2);
+
+            &-active {
+              @extend .bg-home-solutions-carousel-track-item;
+              max-width: 500px;
+
+              @include for-size (gt-xs) {
+                margin-top: 1.5rem;
+
+              }
+
+              @include for-size (xs) {
+                max-width: unset;
+                min-width: 90%;
+              }
+            }
+
+
+            &:hover {
+              cursor: pointer;
+              opacity: 100%;
+            }
+
+            h3 {
+              font-size: 1.7rem;
+              line-height: 1.4;
+              font-family: "Objektivmk2 bold", sans-serif;
+            }
+
+            p {
+              font-size: 1.2rem;
+              line-height: 1.5;
+            }
+
+            #{ $self }-inner {
+              padding: 1rem;
+              display: grid;
+              opacity: 60%;
+              transition: opacity 0.4s ease-in-out;
+
+              &:hover {
+                opacity: 100%;
+              }
+
+              #{ $self }-item__solution {
+                display: flex;
+              }
+
+              &-active {
+                padding: 1rem;
+                border-radius: 4px;
+                @include mat-elevation(6);
+                opacity: 100%;
+                border-bottom: 4px solid $bg-il-salmon;
+
+                #{ $self }-item-active__title {
+                  @include t-color ($bg-primary);
+                  padding-bottom: 1rem;
+                }
+
+
+                #{ $self }-item-active__title-number {
+                  @include t-color ($bg-il-salmon);
+                }
+
+
+
+                #{ $self }-item__solution {
+                  visibility: visible;
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-selector-switch {
+      @include for-size (lt-md) {
+
+        grid-area: bg-home-solutions-selector-switch;
+      }
+
+      padding: 1rem;
+      display: flex;
+      grid-gap: 1rem;
+      justify-self: end;
+      height: max-content;
+
+        @include for-size (gt-lg) {
+                  padding-right: 10vw;
+      }
+
+      @include for-size (xs) {
+        grid-gap: 1rem;
+
+        .bg-btn-yellow,
+        .bg-btn-main {
+          padding: 0.25rem;
+        }
+
+      }
+
+      .bg-btn-yellow,
+      .bg-btn-main {}
+
+      &__button .bg-btn-yellow {
+        padding: 0.25 0.75rem;
+
+        @include t-color ($bg-primary);
+        background-color: $bg-il-yellow !important;
+      }
+    }
+
+  }
+
+  // For who
+  &-all-you-need {
+    margin: 80px 0;
+    $self: &;
+    display: grid;
+    min-height: 65vh;
+    // text-align: center;
+    // background-color: $bg-primary;
+
+
+
+    &-wrapper {
+      max-width: 1200px;
+      margin: $section-margin;
+      display: grid;
+      // grid-template-columns: 1fr 2fr;
+
+      #{ $self }-header {
+        max-width: 1024px;
+
+        &__subheading {
+          max-width: 800px;
+          padding: 3rem 0;
+          margin: $section-margin;
+
+        }
+
+      }
+
+      #{ $self }-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        #{ $self }-item {
+
+
+          h3 {
+            font-size: 1.7rem;
+            line-height: 1.4;
+          }
+
+          p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            @include t-color ($bg-label);
+          }
+        }
+
+
+      }
+    }
+
+
+  }
+
+  // Customization
+  &-customization {
+    $self: &;
+    display: grid;
+    min-height: 65vh;
+    // text-align: center;
+    background-color: var(--light-grey);
+
+    &-wrapper {
+      max-width: 1200px;
+      margin: $section-margin;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-gap: 2rem;
+
+      #{ $self }-header {
+        max-width: 1024px;
+
+        &__subheading {
+          max-width: 800px;
+          padding: 3rem 0;
+          margin: $section-margin;
+
+        }
+
+      }
+
+      #{ $self }-body {
+        display: grid;
+      }
+
+
+    }
+
+  }
+
+  &-customer-spotlight {
+    $self: &;
+    display: grid;
+    min-height: 65vh;
+    background-image: linear-gradient(176deg, #4085ff -10%, #4085ff -1%, #3f83ff 17%, #2c4bff 50%, #0b1940 111%);
+
+    &-wrapper {
+      padding: 0 6vw 6vw;
+      margin: $section-margin;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 2fr 1fr;
+
+      @include for-size (lt-md) {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      @include for-size (gt-lg) {
+        max-width: 80vw;
+      }
+
+      #{ $self }-left {
+        background-color: rgba(216, 216, 216, 0.08);
+        height: 34rem;
+        display: grid;
+
+        @include for-size (lt-md) {
+          height: auto;
+        }
+
+
+        #{ $self }-content {
+          display: grid;
+          grid-gap: 2rem;
+          padding: 4vw;
+          margin-right: 10vw;
+          place-self: center;
+
+          &__quote {
+            color: var(--white);
+          }
+
+          &__credentials {
+            @include t-color ($bg-white);
+            line-height: 1.25;
+
+          }
+        }
+
+      }
+
+
+      #{ $self }-right {
+        display: grid;
+
+        @include for-size (sm) {
+        justify-content: center;
+        margin: auto;
+        max-width: 40vw;
+
+        }
+
+        #{ $self }-media {
+          display: grid;
+          max-width: 500px;
+
+          @include for-size (lg) {
+            margin-left: -160px;
+          }
+
+          @include for-size (md) {
+            margin-left: -80px;
+          }
+
+        }
+      }
+
+
+    }
+
+  }
+
+  &-signup-footer {
+    @include for-size (gt-sm) {
+      margin-top: -60px;
+    }
+
+    @include for-size (gt-sm) {
+      margin-top: -60px;
+    }
+  }
+
+  // Section 5 - Pre-footer
+  &-ctafooter {
+    $self: &;
+    background-color: $bg-primary-800;
+
+    @include for-size (gt-sm) {
+      margin-top: -60px;
+    }
+
+    @include for-size (gt-sm) {
+      margin-top: -60px;
+    }
+  }
+}
+
+// text styles
+
+h1 {
+  font-size: 8.33vw;
+  line-height: 9vw;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Objektivmk2 rg',
+    sans-serif;
+
+  @include for-size (gt-md) {
+    letter-spacing: -6px;
+    line-height: 162px;
+    font-size: 150px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin: 0;
+
+  @include for-size (xs) {
+    font-size: 30px;
+  }
+}
+
+h3 {
+  font-size: 2.66666667vw;
+  line-height: 3.33333333vw;
+  letter-spacing: .04166667vw;
+  margin: 0;
+  font-family: 'Objektivmk2 rg',
+    sans-serif;
+}
+
+// body {
+//     font-size: 2vw;
+//     line-height: 2.667vw;
+// }
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 26px;
+  line-height: 1.4;
+  @include t-color ($bg-label-dark);
+
+  @include for-size(xs) {
+    font-size: 20px;
+  }
+}
+
+body {}
+
+.feature-text {
+  font-size: 1.16666667vw;
+  line-height: 1.66666667vw;
+}
